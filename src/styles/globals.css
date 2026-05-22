@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --storia-beige: #f3eee8;
+  --storia-coffee: #e3dacd;
+  --storia-coffee-light: rgba(235, 228, 218, 0.5);
+  --storia-white: #ffffff;
+  --storia-white75: rgba(255, 255, 255, 0.75);
+  --storia-white50: rgba(255, 255, 255, 0.5);
+  --storia-white40: rgba(255, 255, 255, 0.4);
+  --storia-white15: rgba(255, 255, 255, 0.15);
+  --storia-darkblue: #5577a2;
+  --storia-blue: #a7c9e8;
+  --storia-blue75: rgba(167, 201, 232, 0.75);
+  --storia-blue50: rgba(167, 201, 232, 0.5);
+  --storia-darkgreen: #274a3a;
+  --storia-green: #6ca98b;
+  --storia-green75: rgba(108, 169, 139, 0.75);
+  --storia-green50: rgba(108, 169, 139, 0.5);
+  --storia-green30: rgba(108, 169, 139, 0.3);
+  --storia-green10: rgba(108, 169, 139, 0.1);
+  --storia-orange: #f38e6f;
+  --storia-orange75: rgba(243, 142, 111, 0.75);
+  --storia-orange50: rgba(243, 142, 111, 0.5);
+  --storia-pink: #f6bac6;
+  --storia-pink75: rgba(246, 186, 198, 0.75);
+  --storia-pink50: rgba(246, 186, 198, 0.5);
+  --storia-yellow: #fde293;
+  --storia-yellow75: rgba(253, 226, 147, 0.75);
+  --storia-yellow50: rgba(253, 226, 147, 0.5);
+  --storia-black: #212529;
+  --storia-black90: rgba(33, 37, 41, 0.9);
+  --storia-black75: rgba(33, 37, 41, 0.75);
+  --storia-black50: rgba(33, 37, 41, 0.5);
+  --storia-black40: rgba(33, 37, 41, 0.4);
+  --storia-black15: rgba(33, 37, 41, 0.15);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--storia-beige);
+  color: var(--storia-black);
+  overflow-x: hidden;
+}
+
+/* Grain texture overlay */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 128px;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.speaking-marquee {
+  animation: marquee 28s linear infinite;
+}
+
+.speaking-marquee:hover {
+  animation-play-state: paused;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
