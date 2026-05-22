@@ -18,7 +18,7 @@ export default function ContactSection() {
             Contact
           </p>
           <h2 className="font-display text-4xl font-light text-[var(--storia-black)] md:text-5xl">
-            Let's connect
+            {"Let's connect"}
           </h2>
           <p className="mt-4 font-body text-base font-light text-[var(--storia-black75)]">
             For speaking inquiries, press, or collaborations — reach out below.

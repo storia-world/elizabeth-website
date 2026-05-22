@@ -45,9 +45,9 @@ export default function FounderSection() {
             check-ins and community.
           </p>
           <p className="mt-5 font-body text-[1.05rem] font-light leading-[1.8] text-[var(--storia-black75)]">
-            Storia was featured as Apple's App of the Day — a testament to the
+            {`Storia was featured as Apple's App of the Day — a testament to the
             team's commitment to building something genuinely useful and
-            beautifully designed.
+            beautifully designed.`}
           </p>
 
           <div className="mt-10 flex justify-center" style={{ marginTop: 40 }}>

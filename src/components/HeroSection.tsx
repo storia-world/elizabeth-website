@@ -109,10 +109,10 @@ export default function HeroSection() {
           className="min-w-0"
         >
           <p className="font-body text-[1.1rem] font-light leading-[1.8] text-[var(--storia-black75)]">
-            Hello, I'm Elizabeth. I'm a bestselling author and chart-topping
+            {`Hello, I'm Elizabeth. I'm a bestselling author and chart-topping
             podcaster. I am terrible at Excel spreadsheets and hand-eye
             coordination. But I can write and I love connecting with people,
-            which is why I launched my Substack, Daylight.
+            which is why I launched my Substack, Daylight.`}
           </p>
         </motion.div>
       </div>

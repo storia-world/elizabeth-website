@@ -58,9 +58,9 @@ export default function TopicsSection() {
 
         <div className="w-full shrink-0 lg:w-[240px]">
           <p className="mb-7 font-display text-[0.95rem] italic leading-[1.7] text-[var(--storia-black75)]">
-            Elizabeth's keynotes and fireside chats are designed to inspire and
+            {`Elizabeth's keynotes and fireside chats are designed to inspire and
             empower, leaving audiences with a new perspective on failure,
-            learning and growth.
+            learning and growth.`}
           </p>
           <motion.button
             type="button"

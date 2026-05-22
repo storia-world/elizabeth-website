@@ -249,7 +249,7 @@ export default function Nav() {
               whileHover={{ scale: 1.03, backgroundColor: "#e8785a" }}
               whileTap={{ scale: 0.97 }}
             >
-              Let's chat
+              {"Let's chat"}
             </motion.button>
           </span>
 
@@ -314,7 +314,7 @@ export default function Nav() {
                   whileHover={{ scale: 1.03, backgroundColor: "#e8785a" }}
                   whileTap={{ scale: 0.97 }}
                 >
-                  Let's chat
+                  {"Let's chat"}
                 </motion.button>
               </motion.li>
             </motion.ul>

@@ -8,7 +8,6 @@ import TopicsSection from "@/components/TopicsSection";
 import SpeakingSection from "@/components/SpeakingSection";
 import FounderSection from "@/components/FounderSection";
 import BrandsSection from "@/components/BrandsSection";
-import ContactSection from "@/components/ContactSection";
 import ScrollProgress from "@/components/ScrollProgress";
 
 export default function Home() {

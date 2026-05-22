@@ -48,9 +48,9 @@ function SpeakingIntro() {
             Facebook, Google, Bumble, Spotify and more.
           </p>
           <p className="mt-4 font-body text-base font-light leading-[1.8] text-[var(--storia-black75)]">
-            Elizabeth Uviebinené's talks inspire, empower and educate, leaving
+            {`Elizabeth Uviebinené's talks inspire, empower and educate, leaving
             audiences with new perspectives on class, politics, feminism,
-            racism, and how they intersect.
+            racism, and how they intersect.`}
           </p>
         </motion.div>
       </div>
