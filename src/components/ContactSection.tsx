@@ -48,7 +48,9 @@ function PortraitImage({
 
 function ContactForm({
   submitted,
-  setSubmitted,
+  isSubmitting,
+  error,
+  onSubmit,
   firstName,
   setFirstName,
   lastName,
@@ -59,7 +61,9 @@ function ContactForm({
   setMessage,
 }: {
   submitted: boolean;
-  setSubmitted: (v: boolean) => void;
+  isSubmitting: boolean;
+  error: string | null;
+  onSubmit: () => void;
   firstName: string;
   setFirstName: (v: string) => void;
   lastName: string;
@@ -126,11 +130,18 @@ function ContactForm({
             />
           </div>
 
+          {error && (
+            <Text size="small" className="mb-4 text-[var(--storia-orange)]">
+              {error}
+            </Text>
+          )}
+
           <Button
             color="var(--storia-black)"
-            onClick={() => setSubmitted(true)}
+            onClick={onSubmit}
+            disabled={isSubmitting}
           >
-            SUBMIT
+            {isSubmitting ? "SENDING…" : "SUBMIT"}
           </Button>
         </div>
       )}
@@ -144,6 +155,34 @@ export default function ContactSection() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const handleSubmit = async () => {
+    setError(null);
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ firstName, lastName, email, message }),
+      });
+
+      const data = (await response.json()) as { error?: string };
+
+      if (!response.ok) {
+        setError(data.error ?? "Something went wrong. Please try again.");
+        return;
+      }
+
+      setSubmitted(true);
+    } catch {
+      setError("Something went wrong. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <section id="contact" style={{ position: "relative", overflow: "hidden" }}>
@@ -169,7 +208,9 @@ export default function ContactSection() {
         >
           <ContactForm
             submitted={submitted}
-            setSubmitted={setSubmitted}
+            isSubmitting={isSubmitting}
+            error={error}
+            onSubmit={handleSubmit}
             firstName={firstName}
             setFirstName={setFirstName}
             lastName={lastName}
