@@ -1,20 +1,17 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { Eyebrow, FadeIn, Section, Text } from "@/components/common";
 
 function SpeakingIntro() {
   return (
     <>
-      <p className="mb-2 font-body text-sm font-medium uppercase tracking-[0.15em] text-[var(--storia-darkgreen)]">
-        Speaking
-      </p>
+      <Eyebrow>Speaking</Eyebrow>
 
       <div className="mt-14 grid grid-cols-1 items-center gap-12 lg:grid-cols-[45%_55%] lg:gap-16">
-        <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
+        <FadeIn
+          direction="left"
+          distance={30}
+          duration={0.7}
           className="w-[380px] max-w-full"
           style={{
             aspectRatio: "4 / 5",
@@ -25,12 +22,7 @@ function SpeakingIntro() {
           aria-hidden
         />
 
-        <motion.div
-          initial={{ opacity: 0, x: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.15 }}
-        >
+        <FadeIn direction="right" distance={30} duration={0.7} delay={0.15}>
           <p
             className="font-display font-light text-[var(--storia-black)]"
             style={{
@@ -42,17 +34,17 @@ function SpeakingIntro() {
             Sought-after speaker
           </p>
 
-          <p className="font-body text-base font-light leading-[1.8] text-[var(--storia-blackLight)]">
+          <Text>
             Elizabeth Uviebinené is a sought-after public speaker and has
             delivered talks and workshops to numerous organisations, such as
             Facebook, Google, Bumble, Spotify and more.
-          </p>
-          <p className="mt-4 font-body text-base font-light leading-[1.8] text-[var(--storia-blackLight)]">
+          </Text>
+          <Text className="mt-4">
             {`Elizabeth Uviebinené's talks inspire, empower and educate, leaving
             audiences with new perspectives on class, politics, feminism,
             racism, and how they intersect.`}
-          </p>
-        </motion.div>
+          </Text>
+        </FadeIn>
       </div>
     </>
   );
@@ -60,14 +52,8 @@ function SpeakingIntro() {
 
 export default function SpeakingSection() {
   return (
-    <section
-      id="speaker"
-      style={{
-        background: "var(--storia-beige)",
-        padding: "120px 8vw 0",
-      }}
-    >
+    <Section id="speaker" padding="120px 8vw 0">
       <SpeakingIntro />
-    </section>
+    </Section>
   );
 }

@@ -1,7 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
+
+import { Eyebrow, FadeIn, Section, Text } from "@/components/common";
 
 import book1Cover from "@/assets/images/book1.png";
 import book2Cover from "@/assets/images/book2.png";
@@ -65,12 +66,12 @@ const ROW_TWO = books.slice(3, 5);
 
 function BookCard({ book, index }: { book: Book; index: number }) {
   return (
-    <motion.div
+    <FadeIn
+      direction="up"
+      distance={40}
+      delay={index * 0.15}
+      viewportMargin="-80px"
       className="flex min-w-[220px] flex-shrink-0 flex-col items-center snap-start text-center lg:min-w-0"
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.6, delay: index * 0.15 }}
     >
       <div className="relative mb-6 aspect-[2/3] w-[180px] max-w-full overflow-hidden rounded-sm bg-[var(--storia-coffee)] sm:w-[200px]">
         <Image
@@ -89,35 +90,22 @@ function BookCard({ book, index }: { book: Book; index: number }) {
         {book.author}
       </p>
 
-      <p className="mt-5 font-body text-[0.9rem] font-light leading-[1.7] text-[var(--storia-blackLight)]">
+      <Text size="small" className="mt-5">
         {book.description}
-      </p>
-    </motion.div>
+      </Text>
+    </FadeIn>
   );
 }
 
 export default function BooksSection() {
   return (
-    <section
-      id="books"
-      style={{
-        background: "var(--storia-beige)",
-        padding: "120px 8vw",
-      }}
-    >
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-      >
-        <p className="mb-2 font-body text-sm font-medium uppercase tracking-[0.15em] text-[var(--storia-darkgreen)]">
-          Books
-        </p>
+    <Section id="books">
+      <FadeIn>
+        <Eyebrow>Books</Eyebrow>
         <h2 className="font-display text-4xl font-light text-[var(--storia-black)] md:text-5xl">
           Written to inspire
         </h2>
-      </motion.div>
+      </FadeIn>
 
       <div className="mt-14 flex flex-col gap-12 lg:gap-16">
         <div
@@ -137,6 +125,6 @@ export default function BooksSection() {
           ))}
         </div>
       </div>
-    </section>
+    </Section>
   );
 }

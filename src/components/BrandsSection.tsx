@@ -3,6 +3,8 @@
 import { motion } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
 
+import { Eyebrow, FadeIn, Section, Text } from "@/components/common";
+
 import logoBumble from "@/assets/images/logoBumble.png";
 import logoGoogle from "@/assets/images/logoGoogle.png";
 import logoInterflora from "@/assets/images/logoInterflora.png";
@@ -89,38 +91,26 @@ function AdAgeClippingCard() {
 
 export default function BrandsSection() {
   return (
-    <section
-      id="brands"
-      style={{
-        background: "var(--storia-beige)",
-        padding: "120px 8vw",
-      }}
-    >
-      <p className="mb-2 font-body text-sm font-medium uppercase tracking-[0.15em] text-[var(--storia-darkgreen)]">
-        Brands
-      </p>
+    <Section id="brands">
+      <Eyebrow>Brands</Eyebrow>
 
       <div className="mt-14 grid grid-cols-1 items-center gap-20 md:grid-cols-[42%_55%] md:gap-[80px]">
         <AdAgeClippingCard />
 
-        <motion.div
+        <FadeIn
+          direction="right"
+          distance={30}
+          duration={0.7}
           className="min-w-0"
-          initial={{ opacity: 0, x: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
         >
-          <p
-            className="font-body font-light leading-[1.8] text-[var(--storia-blackLight)]"
-            style={{ fontSize: "1.05rem", marginBottom: "48px" }}
-          >
+          <Text className="mb-12">
             Having developed engaging, culturally resonant brand campaigns
             across a wide range of categories during my time as an ad(wo)man, I
             continue to offer brand consultancy services that combine my
             journalistic and advertising experience, helping institutions,
             brands and agencies find the sweet spot where culture, media and
             brands intersect.
-          </p>
+          </Text>
 
           <div
             className="flex flex-row flex-wrap items-center"
@@ -145,8 +135,8 @@ export default function BrandsSection() {
               </motion.span>
             ))}
           </div>
-        </motion.div>
+        </FadeIn>
       </div>
-    </section>
+    </Section>
   );
 }

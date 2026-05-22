@@ -6,6 +6,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image, { StaticImageData } from "next/image";
 
+import { Text } from "@/components/common";
 import founderPortrait from "@/assets/images/founder.jpeg";
 import storyImg1 from "@/assets/images/storyImg1.jpg";
 import storyImg3 from "@/assets/images/storyImg3.jpg";
@@ -206,9 +207,9 @@ export default function HeroSection() {
                   {activeSlide.title}
                 </h3>
               )}
-              <p className="whitespace-pre-line font-body text-[1.1rem] font-light leading-[1.8] text-[var(--storia-blackLight)]">
+              <Text size="large" className="whitespace-pre-line">
                 {activeSlide.content}
-              </p>
+              </Text>
             </motion.div>
           </AnimatePresence>
         </div>

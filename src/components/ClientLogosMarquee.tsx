@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { FadeIn, Section } from "@/components/common";
 
 const CLIENT_LOGOS = [
   { id: "hubspot", label: "HubSpot" },
@@ -102,19 +102,8 @@ function LogoTrack({ duplicate = false }: { duplicate?: boolean }) {
 
 export default function ClientLogosMarquee() {
   return (
-    <div
-      style={{
-        background: "var(--storia-beige)",
-        padding: "0 8vw 80px",
-      }}
-    >
-      <motion.div
-        className="mt-20 w-full"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-      >
+    <Section padding="0 8vw 80px">
+      <FadeIn className="mt-20 w-full">
         <p className="mb-12 text-center font-display text-2xl font-light leading-snug text-[var(--storia-black)] md:text-[1.75rem]">
           Elizabeth Uviebinené has delivered talks for global brands including:
         </p>
@@ -125,7 +114,7 @@ export default function ClientLogosMarquee() {
             <LogoTrack duplicate />
           </div>
         </div>
-      </motion.div>
-    </div>
+      </FadeIn>
+    </Section>
   );
 }

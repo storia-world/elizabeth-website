@@ -2,6 +2,8 @@
 
 import { useCallback, useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+
+import Button from "@/components/common/Button";
 import { useScrollY } from "@/lib/useScrollY";
 
 const NAV_LINKS = [
@@ -10,7 +12,6 @@ const NAV_LINKS = [
   { label: "Speaker", href: "#speaker" },
   { label: "Founder", href: "#founder" },
   { label: "Brands", href: "#brands" },
-  { label: "Press", href: "#press" },
 ];
 
 const SECTION_IDS = NAV_LINKS.map((link) => link.href.slice(1));
@@ -230,27 +231,9 @@ export default function Nav() {
         {/* CTA + mobile toggle */}
         <div className="flex items-center gap-4">
           <span className="relative hidden md:inline-block">
-            <span
-              className="pointer-events-none absolute inset-0 rounded-[50px] opacity-70 blur-md"
-              style={{ background: "var(--storia-pink50)" }}
-              aria-hidden
-            />
-            <motion.button
-              type="button"
-              onClick={handleCtaClick}
-              className="relative font-body font-medium text-white"
-              style={{
-                borderRadius: "50px",
-                background: "var(--storia-orange)",
-                fontSize: "0.8rem",
-                letterSpacing: "0.1em",
-                padding: "10px 24px",
-              }}
-              whileHover={{ scale: 1.03, backgroundColor: "#e8785a" }}
-              whileTap={{ scale: 0.97 }}
-            >
+            <Button color="var(--storia-orange)" onClick={handleCtaClick}>
               {"Let's chat"}
-            </motion.button>
+            </Button>
           </span>
 
           <HamburgerButton
@@ -300,22 +283,9 @@ export default function Nav() {
                 </motion.li>
               ))}
               <motion.li variants={menuItem} className="mt-4">
-                <motion.button
-                  type="button"
-                  onClick={handleCtaClick}
-                  className="font-body font-medium text-white"
-                  style={{
-                    borderRadius: "50px",
-                    background: "var(--storia-orange)",
-                    fontSize: "0.8rem",
-                    letterSpacing: "0.1em",
-                    padding: "10px 24px",
-                  }}
-                  whileHover={{ scale: 1.03, backgroundColor: "#e8785a" }}
-                  whileTap={{ scale: 0.97 }}
-                >
+                <Button color="var(--storia-orange)" onClick={handleCtaClick}>
                   {"Let's chat"}
-                </motion.button>
+                </Button>
               </motion.li>
             </motion.ul>
           </motion.div>

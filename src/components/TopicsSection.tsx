@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion";
 
+import Button from "@/components/common/Button";
+
 const TOPICS = [
   "Reframing failure as data acquisition",
   "The art of storytelling",
@@ -62,15 +64,8 @@ export default function TopicsSection() {
             empower, leaving audiences with a new perspective on failure,
             learning and growth.`}
           </p>
-          <motion.button
-            type="button"
-            className="cursor-pointer rounded-full border-none bg-[var(--storia-black)] font-body text-sm font-medium tracking-[0.15em] text-white"
-            style={{ padding: "14px 36px" }}
-            whileHover={{
-              backgroundColor: "var(--storia-darkblue)",
-              scale: 1.02,
-            }}
-            whileTap={{ scale: 0.97 }}
+          <Button
+            color="var(--storia-black)"
             onClick={() =>
               document
                 .getElementById("contact")
@@ -78,7 +73,7 @@ export default function TopicsSection() {
             }
           >
             ENQUIRE
-          </motion.button>
+          </Button>
         </div>
       </div>
     </div>
