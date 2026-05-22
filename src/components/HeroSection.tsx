@@ -14,11 +14,16 @@ import storyImg6 from "@/assets/images/storyImg6.jpg";
 type HeroSlide = {
   src: StaticImageData;
   alt: string;
-  title: string;
+  title?: string;
   content: string;
 };
 
 const HERO_SLIDES: HeroSlide[] = [
+  {
+    src: founderPortrait,
+    alt: "Elizabeth Uviebinené — Today",
+    content: `Hello, I'm Elizabeth. I'm a bestselling author and chart-topping podcaster. I am terrible at Excel spreadsheets and hand-eye coordination. But I can write and I love connecting with people, which is why I launched my Substack, Daylight.`,
+  },
   {
     src: storyImg1,
     alt: "Elizabeth Uviebinené — School Uniform / Peckham",
@@ -88,7 +93,7 @@ function HeroCarousel({
   showControls,
 }: HeroCarouselProps) {
   return (
-    <div className="relative mx-auto w-full max-w-[min(100%,420px)]">
+    <div className="relative mx-auto w-full max-w-[min(100%,380px)] sm:max-w-[390px]">
       <div className="overflow-hidden" ref={emblaRef}>
         <div
           className="flex touch-pan-y"
@@ -106,7 +111,7 @@ function HeroCarousel({
                   alt={slide.alt}
                   fill
                   className="object-cover object-center"
-                  sizes="(max-width: 768px) 85vw, 420px"
+                  sizes="(max-width: 768px) 85vw, 390px"
                   priority={index === 0}
                 />
               </div>
@@ -196,9 +201,11 @@ export default function HeroSection() {
               exit={{ opacity: 0, x: -12 }}
               transition={{ duration: 0.4 }}
             >
-              <h3 className="mb-4 font-display text-[1.35rem] font-semibold text-[var(--storia-black)]">
-                {activeSlide.title}
-              </h3>
+              {activeSlide.title && (
+                <h3 className="mb-4 font-display text-[1.35rem] font-semibold text-[var(--storia-black)]">
+                  {activeSlide.title}
+                </h3>
+              )}
               <p className="whitespace-pre-line font-body text-[1.1rem] font-light leading-[1.8] text-[var(--storia-blackLight)]">
                 {activeSlide.content}
               </p>
