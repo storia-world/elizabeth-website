@@ -9,6 +9,8 @@ import SpeakingSection from "@/components/SpeakingSection";
 import FounderSection from "@/components/FounderSection";
 import BrandsSection from "@/components/BrandsSection";
 import ScrollProgress from "@/components/ScrollProgress";
+import ContactSection from "@/components/ContactSection";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -21,7 +23,8 @@ export default function Home() {
       <TopicsSection />
       <FounderSection />
       <BrandsSection />
-      {/* <ContactSection /> */}
+      <ContactSection />
+      <Footer />
       <ScrollProgress />
     </>
   );

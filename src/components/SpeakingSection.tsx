@@ -42,12 +42,12 @@ function SpeakingIntro() {
             Sought-after speaker
           </p>
 
-          <p className="font-body text-base font-light leading-[1.8] text-[var(--storia-black75)]">
+          <p className="font-body text-base font-light leading-[1.8] text-[var(--storia-blackLight)]">
             Elizabeth Uviebinené is a sought-after public speaker and has
             delivered talks and workshops to numerous organisations, such as
             Facebook, Google, Bumble, Spotify and more.
           </p>
-          <p className="mt-4 font-body text-base font-light leading-[1.8] text-[var(--storia-black75)]">
+          <p className="mt-4 font-body text-base font-light leading-[1.8] text-[var(--storia-blackLight)]">
             {`Elizabeth Uviebinené's talks inspire, empower and educate, leaving
             audiences with new perspectives on class, politics, feminism,
             racism, and how they intersect.`}

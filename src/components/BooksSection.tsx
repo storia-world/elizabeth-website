@@ -5,6 +5,8 @@ import Image, { StaticImageData } from "next/image";
 
 import book1Cover from "@/assets/images/book1.png";
 import book2Cover from "@/assets/images/book2.png";
+import book3Cover from "@/assets/images/book3.png";
+import book4Cover from "@/assets/images/book4.png";
 import book5Cover from "@/assets/images/book5.png";
 
 type Book = {
@@ -40,12 +42,31 @@ const books: Book[] = [
       "Being a loud Black girl isn't about the volume of your voice; and using your voice doesn't always mean speaking the loudest. Most of the time it's simply about showing up.",
     cover: book5Cover,
   },
+  {
+    id: 4,
+    title: "SLAY IN YOUR LANE: THE JOURNAL",
+    author: "Yomi Adegoke & Elizabeth Uviebinené",
+    description:
+      "The Black Girl Bible in journal form — a space to reflect, plan and slay on your own terms, with prompts and inspiration drawn from the original bestseller.",
+    cover: book3Cover,
+  },
+  {
+    id: 5,
+    title: "THE OFFLINE DIARIES",
+    author: "Yomi Adegoke & Elizabeth Uviebinené",
+    description:
+      "From the authors of Slay in Your Lane — the story of Ade and Shanice, two best friends navigating school, social media and growing up in London.",
+    cover: book4Cover,
+  },
 ];
+
+const ROW_ONE = books.slice(0, 3);
+const ROW_TWO = books.slice(3, 5);
 
 function BookCard({ book, index }: { book: Book; index: number }) {
   return (
     <motion.div
-      className="min-w-[220px] flex-shrink-0 snap-start lg:min-w-0"
+      className="flex min-w-[220px] flex-shrink-0 flex-col items-center snap-start text-center lg:min-w-0"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
@@ -64,11 +85,11 @@ function BookCard({ book, index }: { book: Book; index: number }) {
       <h3 className="font-display text-xl font-light uppercase tracking-wide text-[var(--storia-black)]">
         {book.title}
       </h3>
-      <p className="mt-1 font-body text-sm font-normal text-[var(--storia-black50)]">
+      <p className="mt-1 font-body text-sm font-normal text-[var(--storia-gray)]">
         {book.author}
       </p>
 
-      <p className="mt-5 font-body text-[0.9rem] font-light leading-[1.7] text-justify text-[var(--storia-black75)]">
+      <p className="mt-5 font-body text-[0.9rem] font-light leading-[1.7] text-[var(--storia-blackLight)]">
         {book.description}
       </p>
     </motion.div>
@@ -78,7 +99,7 @@ function BookCard({ book, index }: { book: Book; index: number }) {
 export default function BooksSection() {
   return (
     <section
-      id="author"
+      id="books"
       style={{
         background: "var(--storia-beige)",
         padding: "120px 8vw",
@@ -98,13 +119,23 @@ export default function BooksSection() {
         </h2>
       </motion.div>
 
-      <div
-        className="mt-14 flex gap-12 overflow-x-auto pb-4 scroll-smooth [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:grid lg:grid-cols-3 lg:overflow-visible"
-        style={{ scrollSnapType: "x mandatory" }}
-      >
-        {books.map((book, index) => (
-          <BookCard key={book.id} book={book} index={index} />
-        ))}
+      <div className="mt-14 flex flex-col gap-12 lg:gap-16">
+        <div
+          className="flex gap-12 overflow-x-auto pb-4 scroll-smooth [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:grid lg:grid-cols-3 lg:overflow-visible"
+          style={{ scrollSnapType: "x mandatory" }}
+        >
+          {ROW_ONE.map((book, index) => (
+            <BookCard key={book.id} book={book} index={index} />
+          ))}
+        </div>
+        <div
+          className="flex gap-12 overflow-x-auto pb-4 scroll-smooth [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:mx-auto lg:w-2/3 lg:grid lg:grid-cols-2 lg:gap-12 lg:overflow-visible"
+          style={{ scrollSnapType: "x mandatory" }}
+        >
+          {ROW_TWO.map((book, index) => (
+            <BookCard key={book.id} book={book} index={index + 3} />
+          ))}
+        </div>
       </div>
     </section>
   );

@@ -14,10 +14,10 @@ const BRAND_LOGOS: {
   alt: string;
   height: number;
 }[] = [
-  { id: "google", src: logoGoogle, alt: "Google", height: 32 },
-  { id: "nike", src: logoNike, alt: "Nike", height: 32 },
-  { id: "bumble", src: logoBumble, alt: "Bumble", height: 32 },
-  { id: "interflora", src: logoInterflora, alt: "Interflora", height: 32 },
+  { id: "google", src: logoGoogle, alt: "Google", height: 44 },
+  { id: "nike", src: logoNike, alt: "Nike", height: 44 },
+  { id: "bumble", src: logoBumble, alt: "Bumble", height: 44 },
+  { id: "interflora", src: logoInterflora, alt: "Interflora", height: 44 },
 ];
 
 function AdAgeClippingCard() {
@@ -46,7 +46,7 @@ function AdAgeClippingCard() {
       </p>
 
       <p
-        className="font-body font-light text-[var(--storia-black50)]"
+        className="font-body font-light text-[var(--storia-gray)]"
         style={{ fontSize: "0.6rem", marginBottom: "16px" }}
       >
         Latest ▾ &nbsp; Editor&apos;s Picks ▾ &nbsp; Most Popular ▾
@@ -60,7 +60,7 @@ function AdAgeClippingCard() {
       </h3>
 
       <p
-        className="font-body font-light text-[var(--storia-black75)]"
+        className="font-body font-light text-[var(--storia-blackLight)]"
         style={{ fontSize: "0.75rem", marginTop: "8px" }}
       >
         Uncommon Creative Studio&apos;s brand strategist is also accomplished
@@ -68,7 +68,7 @@ function AdAgeClippingCard() {
       </p>
 
       <p
-        className="font-body font-light text-[var(--storia-black50)]"
+        className="font-body font-light text-[var(--storia-gray)]"
         style={{
           fontSize: "0.65rem",
           marginTop: "6px",
@@ -111,7 +111,7 @@ export default function BrandsSection() {
           transition={{ duration: 0.7 }}
         >
           <p
-            className="font-body font-light leading-[1.8] text-[var(--storia-black75)]"
+            className="font-body font-light leading-[1.8] text-[var(--storia-blackLight)]"
             style={{ fontSize: "1.05rem", marginBottom: "48px" }}
           >
             Having developed engaging, culturally resonant brand campaigns

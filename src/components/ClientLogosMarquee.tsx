@@ -78,7 +78,7 @@ function ClientLogo({ id, label }: { id: string; label: string }) {
       );
     default:
       return (
-        <span className="font-body text-sm font-medium text-[var(--storia-black50)]">
+        <span className="font-body text-sm font-medium text-[var(--storia-gray)]">
           {label}
         </span>
       );

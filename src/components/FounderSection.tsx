@@ -39,12 +39,12 @@ export default function FounderSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <p className="font-body text-[1.05rem] font-light leading-[1.8] text-[var(--storia-black75)]">
+          <p className="font-body text-[1.05rem] font-light leading-[1.8] text-[var(--storia-blackLight)]">
             Elizabeth Uviebinené founded Storia, an award-winning wellbeing app
             helping people build healthier daily habits through journaling, mood
             check-ins and community.
           </p>
-          <p className="mt-5 font-body text-[1.05rem] font-light leading-[1.8] text-[var(--storia-black75)]">
+          <p className="mt-5 font-body text-[1.05rem] font-light leading-[1.8] text-[var(--storia-blackLight)]">
             {`Storia was featured as Apple's App of the Day — a testament to the
             team's commitment to building something genuinely useful and
             beautifully designed.`}

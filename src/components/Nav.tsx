@@ -6,7 +6,7 @@ import { useScrollY } from "@/lib/useScrollY";
 
 const NAV_LINKS = [
   { label: "About", href: "#about" },
-  { label: "Author", href: "#author" },
+  { label: "Books", href: "#books" },
   { label: "Speaker", href: "#speaker" },
   { label: "Founder", href: "#founder" },
   { label: "Brands", href: "#brands" },
@@ -61,7 +61,7 @@ function NavLink({
       className={`group relative font-body font-normal tracking-[0.08em] transition-colors duration-200 ${className}`}
       style={{
         fontSize: "0.85rem",
-        color: active ? "var(--storia-black)" : "var(--storia-black50)",
+        color: active ? "var(--storia-black)" : "var(--storia-gray)",
       }}
     >
       <span className="relative inline-block pb-0.5">
@@ -205,7 +205,7 @@ export default function Nav() {
             e.preventDefault();
             scrollToSection("#about");
           }}
-          className="font-display font-light text-[var(--storia-black75)] transition-opacity hover:opacity-80"
+          className="font-display font-light text-[var(--storia-blackLight)] transition-opacity hover:opacity-80"
           style={{
             fontSize: "1.4rem",
             letterSpacing: "0.15em",
@@ -292,7 +292,7 @@ export default function Nav() {
                       color:
                         activeSection === link.href.slice(1)
                           ? "var(--storia-black)"
-                          : "var(--storia-black50)",
+                          : "var(--storia-gray)",
                     }}
                   >
                     {link.label}

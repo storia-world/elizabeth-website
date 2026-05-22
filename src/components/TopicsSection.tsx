@@ -31,7 +31,7 @@ export default function TopicsSection() {
         }}
       >
         <p
-          className="shrink-0 whitespace-nowrap font-body font-medium uppercase tracking-[0.25em] text-[var(--storia-black50)] lg:mr-20 lg:pt-1"
+          className="shrink-0 whitespace-nowrap font-body font-medium uppercase tracking-[0.25em] text-[var(--storia-gray)] lg:mr-20 lg:pt-1"
           style={{ fontSize: "0.75rem" }}
         >
           TOPICS
@@ -49,7 +49,7 @@ export default function TopicsSection() {
                 x: 6,
                 color: "var(--storia-darkblue)",
               }}
-              className="cursor-pointer border-b border-[var(--storia-black15)] py-[18px] font-display text-[1.3rem] font-semibold text-[var(--storia-black90)]"
+              className="cursor-pointer border-b border-[var(--storia-black15)] py-[18px] font-display text-[1.3rem] font-semibold text-[var(--storia-blackLight)]"
             >
               {topic}
             </motion.li>
@@ -57,7 +57,7 @@ export default function TopicsSection() {
         </ul>
 
         <div className="w-full shrink-0 lg:w-[240px]">
-          <p className="mb-7 font-display text-[0.95rem] italic leading-[1.7] text-[var(--storia-black75)]">
+          <p className="mb-7 font-display text-[0.95rem] italic leading-[1.7] text-[var(--storia-blackLight)]">
             {`Elizabeth's keynotes and fireside chats are designed to inspire and
             empower, leaving audiences with a new perspective on failure,
             learning and growth.`}
