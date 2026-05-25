@@ -4,9 +4,6 @@ import Image, { StaticImageData } from "next/image";
 
 import { Eyebrow, FadeIn, Section } from "@/components/common";
 
-import founderPortrait from "@/assets/images/founder.jpeg";
-import storyImg1 from "@/assets/images/storyImg1.jpg";
-import storyImg3 from "@/assets/images/storyImg3.jpg";
 import storyImg6 from "@/assets/images/storyImg6.jpg";
 
 type PodcastFeature = {
