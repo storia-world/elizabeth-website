@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 import Button from "@/components/common/Button";
@@ -9,7 +9,9 @@ import { useScrollY } from "@/lib/useScrollY";
 const NAV_LINKS = [
   { label: "About", href: "#about" },
   { label: "Books", href: "#books" },
+  { label: "Podcast", href: "#podcasting" },
   { label: "Speaker", href: "#speaker" },
+  { label: "Press", href: "#press" },
   { label: "Founder", href: "#founder" },
   { label: "Brands", href: "#brands" },
 ];
@@ -51,8 +53,8 @@ function NavLink({
 }) {
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
-    scrollToSection(href);
     onNavigate?.();
+    scrollToSection(href);
   };
 
   return (
@@ -62,15 +64,21 @@ function NavLink({
       className={`group relative font-body font-normal tracking-[0.08em] transition-colors duration-200 ${className}`}
       style={{
         fontSize: "0.85rem",
-        color: active ? "var(--storia-black)" : "var(--storia-gray)",
+        color: active ? "var(--storia-orange)" : "var(--storia-black75)",
+        fontWeight: active ? 600 : 400,
       }}
     >
       <span className="relative inline-block pb-0.5">
         {label}
         <span
-          className={`absolute bottom-0 left-0 h-px w-full origin-left bg-[var(--storia-black)] transition-transform duration-[250ms] ease-[ease] ${
+          className={`absolute bottom-0 left-0 h-px w-full origin-left transition-transform duration-[250ms] ease-[ease] ${
             active ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
           }`}
+          style={{
+            backgroundColor: active
+              ? "var(--storia-orange)"
+              : "var(--storia-black)",
+          }}
         />
       </span>
     </a>
@@ -133,6 +141,19 @@ export default function Nav() {
   const scrolled = scrollY > 50;
   const [activeSection, setActiveSection] = useState<string>("about");
   const [menuOpen, setMenuOpen] = useState(false);
+  const manualSelectionTimeoutRef = useRef<number | null>(null);
+
+  const setManualActiveSection = useCallback((href: string) => {
+    setActiveSection(href.slice(1));
+
+    if (manualSelectionTimeoutRef.current !== null) {
+      window.clearTimeout(manualSelectionTimeoutRef.current);
+    }
+
+    manualSelectionTimeoutRef.current = window.setTimeout(() => {
+      manualSelectionTimeoutRef.current = null;
+    }, 900);
+  }, []);
 
   useEffect(() => {
     const sections = SECTION_IDS.map((id) =>
@@ -143,6 +164,8 @@ export default function Nav() {
 
     const observer = new IntersectionObserver(
       (entries) => {
+        if (manualSelectionTimeoutRef.current !== null) return;
+
         const visible = entries.filter((e) => e.isIntersecting);
         if (visible.length === 0) return;
 
@@ -159,6 +182,14 @@ export default function Nav() {
 
     sections.forEach((section) => observer.observe(section));
     return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    return () => {
+      if (manualSelectionTimeoutRef.current !== null) {
+        window.clearTimeout(manualSelectionTimeoutRef.current);
+      }
+    };
   }, []);
 
   useEffect(() => {
@@ -204,9 +235,10 @@ export default function Nav() {
           href="#about"
           onClick={(e) => {
             e.preventDefault();
+            setManualActiveSection("#about");
             scrollToSection("#about");
           }}
-          className="font-display font-light text-[var(--storia-blackLight)] transition-opacity hover:opacity-80"
+          className="font-display font-light text-[var(--storia-black)] transition-opacity hover:opacity-80"
           style={{
             fontSize: "1.4rem",
             letterSpacing: "0.15em",
@@ -216,13 +248,14 @@ export default function Nav() {
         </a>
 
         {/* Desktop nav links */}
-        <ul className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-8 md:flex">
+        <ul className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-5 lg:gap-7 md:flex">
           {NAV_LINKS.map((link) => (
             <li key={link.href}>
               <NavLink
                 label={link.label}
                 href={link.href}
                 active={activeSection === link.href.slice(1)}
+                onNavigate={() => setManualActiveSection(link.href)}
               />
             </li>
           ))}
@@ -266,6 +299,7 @@ export default function Nav() {
                     href={link.href}
                     onClick={(e) => {
                       e.preventDefault();
+                      setManualActiveSection(link.href);
                       scrollToSection(link.href);
                       setMenuOpen(false);
                     }}

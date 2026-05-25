@@ -79,7 +79,7 @@ export default function Footer() {
           fontFamily: "var(--font-body)",
           fontWeight: 300,
           fontSize: "0.75rem",
-          color: "var(--storia-gray)",
+          color: "var(--storia-blackLight)",
         }}
       >
         © {new Date().getFullYear()} Elizabeth Uviebinené. All rights reserved.

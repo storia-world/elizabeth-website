@@ -1,13 +1,22 @@
 "use client";
 
-import { Eyebrow, FadeIn, Section, Text } from "@/components/common";
+import { Button, Eyebrow, FadeIn, Section, Text } from "@/components/common";
+
+const SPEAKING_TOPICS = [
+  "Reframing failure as data acquisition",
+  "Growth through vulnerability",
+  "Considered risk-taking",
+  "The power of connection",
+  "Promoting psychological safety",
+  "Measuring the value of diversity",
+];
 
 function SpeakingIntro() {
   return (
     <>
       <Eyebrow>Speaking</Eyebrow>
 
-      <div className="mt-14 grid grid-cols-1 items-center gap-12 lg:grid-cols-[45%_55%] lg:gap-16">
+      <div className="mt-14 grid grid-cols-1 items-center gap-4 lg:grid-cols-[40%_60%] lg:gap-4">
         <FadeIn
           direction="left"
           distance={30}
@@ -44,6 +53,42 @@ function SpeakingIntro() {
             audiences with new perspectives on class, politics, feminism,
             racism, and how they intersect.`}
           </Text>
+
+          <div className="mt-8 w-full shrink-0">
+            <p className="mb-4 font-body text-[0.8rem] font-medium uppercase tracking-[0.24em] text-[var(--storia-gray)]">
+              She speaks on
+            </p>
+
+            <ul className="grid list-none grid-cols-1 gap-x-8 gap-y-3 p-0 sm:grid-cols-2">
+              {SPEAKING_TOPICS.map((topic) => (
+                <li
+                  key={topic}
+                  className="border-b border-[var(--storia-black15)] pb-3 font-display text-[1.02rem] font-medium leading-[1.35] text-[var(--storia-blackLight)]"
+                >
+                  {topic}
+                </li>
+              ))}
+            </ul>
+
+            <div className="mt-7">
+              <p className="mb-6 font-display text-[0.95rem] italic leading-[1.7] text-[var(--storia-blackLight)]">
+                {`Elizabeth's keynotes and fireside chats are designed to inspire and
+            empower, leaving audiences with a new perspective on failure,
+            learning and growth.`}
+              </p>
+
+              <Button
+                color="var(--storia-black)"
+                onClick={() =>
+                  document
+                    .getElementById("contact")
+                    ?.scrollIntoView({ behavior: "smooth" })
+                }
+              >
+                ENQUIRE
+              </Button>
+            </div>
+          </div>
         </FadeIn>
       </div>
     </>

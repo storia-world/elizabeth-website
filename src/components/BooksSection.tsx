@@ -13,7 +13,6 @@ import book5Cover from "@/assets/images/book5.png";
 type Book = {
   id: number;
   title: string;
-  author: string;
   description: string;
   cover: StaticImageData;
 };
@@ -22,7 +21,6 @@ const books: Book[] = [
   {
     id: 1,
     title: "SLAY IN YOUR LANE",
-    author: "Yomi Adegoke & Elizabeth Uviebinené",
     description:
       "The long-awaited, inspirational guide to life for a generation of Black British women inspired to make lemonade out of lemons and find success in every area of life.",
     cover: book1Cover,
@@ -30,7 +28,6 @@ const books: Book[] = [
   {
     id: 2,
     title: "THE RESET",
-    author: "Elizabeth Uviebinené",
     description:
       "Ideas to change how we work and live — a curious, refreshing read from society and city down to community, business, culture, and you.",
     cover: book2Cover,
@@ -38,7 +35,6 @@ const books: Book[] = [
   {
     id: 3,
     title: "LOUD BLACK GIRLS",
-    author: "Yomi Adegoke & Elizabeth Uviebinené",
     description:
       "Being a loud Black girl isn't about the volume of your voice; and using your voice doesn't always mean speaking the loudest. Most of the time it's simply about showing up.",
     cover: book5Cover,
@@ -46,7 +42,6 @@ const books: Book[] = [
   {
     id: 4,
     title: "SLAY IN YOUR LANE: THE JOURNAL",
-    author: "Yomi Adegoke & Elizabeth Uviebinené",
     description:
       "The Black Girl Bible in journal form — a space to reflect, plan and slay on your own terms, with prompts and inspiration drawn from the original bestseller.",
     cover: book3Cover,
@@ -54,7 +49,6 @@ const books: Book[] = [
   {
     id: 5,
     title: "THE OFFLINE DIARIES",
-    author: "Yomi Adegoke & Elizabeth Uviebinené",
     description:
       "From the authors of Slay in Your Lane — the story of Ade and Shanice, two best friends navigating school, social media and growing up in London.",
     cover: book4Cover,
@@ -86,9 +80,6 @@ function BookCard({ book, index }: { book: Book; index: number }) {
       <h3 className="font-display text-xl font-light uppercase tracking-wide text-[var(--storia-black)]">
         {book.title}
       </h3>
-      <p className="mt-1 font-body text-sm font-normal text-[var(--storia-gray)]">
-        {book.author}
-      </p>
 
       <Text size="small" className="mt-5">
         {book.description}

@@ -1,12 +1,12 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
-import useEmblaCarousel from "embla-carousel-react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image, { StaticImageData } from "next/image";
 
-import { Text } from "@/components/common";
+import { Eyebrow, Text } from "@/components/common";
+import heroFrame from "@/assets/images/frame.png";
 import founderPortrait from "@/assets/images/founder.jpeg";
 import storyImg1 from "@/assets/images/storyImg1.jpg";
 import storyImg3 from "@/assets/images/storyImg3.jpg";
@@ -23,7 +23,7 @@ const HERO_SLIDES: HeroSlide[] = [
   {
     src: founderPortrait,
     alt: "Elizabeth Uviebinené — Today",
-    content: `Hello, I'm Elizabeth. I'm a bestselling author and chart-topping podcaster. I am terrible at Excel spreadsheets and hand-eye coordination. But I can write and I love connecting with people, which is why I launched my Substack, Daylight.`,
+    content: `I'm a bestselling author and chart-topping podcaster. I am terrible at Excel spreadsheets and hand-eye coordination. But I can write and I love connecting with people, which is why I launched my Substack, Daylight.`,
   },
   {
     src: storyImg1,
@@ -75,50 +75,91 @@ const HERO_SLIDES: HeroSlide[] = [
   },
 ];
 
-const SLIDE_GAP = "1rem";
-/** Fixed frame so every slide matches regardless of source aspect ratio */
-const HERO_IMAGE_FRAME_CLASS =
-  "relative aspect-[3/4] w-full overflow-hidden rounded-lg";
+const HERO_FRAME_INNER_IMAGE_CLASS =
+  "absolute inset-x-[7.2%] top-[5.7%] bottom-[5.8%] overflow-hidden bg-[var(--storia-coffee-light)]";
 
 type HeroCarouselProps = {
-  emblaRef: ReturnType<typeof useEmblaCarousel>[0];
+  activeSlide: HeroSlide;
   onPrev: () => void;
   onNext: () => void;
   showControls: boolean;
+  currentStep: number;
+  totalSteps: number;
+  transitionDirection: number;
 };
 
+function HeroSlideCopy({ slide }: { slide: HeroSlide }) {
+  return (
+    <>
+      <h2 className="font-display text-[1.8rem] font-semibold leading-[1.04] text-[var(--storia-black)] sm:text-[2.2rem] lg:text-[3rem]">
+        {slide.title ?? "Hi, I'm Elizabeth."}
+      </h2>
+
+      <div className="mt-6 h-[2px] w-14 rounded-full bg-[var(--storia-orange50)]" />
+
+      <Text
+        size="large"
+        className="mt-8 max-w-[42rem] whitespace-pre-line text-[1.05rem] leading-[1.9] text-[var(--storia-blackLight)] sm:text-[1.12rem]"
+      >
+        {slide.content}
+      </Text>
+    </>
+  );
+}
+
 function HeroCarousel({
-  emblaRef,
+  activeSlide,
   onPrev,
   onNext,
   showControls,
+  currentStep,
+  totalSteps,
+  transitionDirection,
 }: HeroCarouselProps) {
   return (
-    <div className="relative mx-auto w-full max-w-[min(100%,380px)] sm:max-w-[390px]">
-      <div className="overflow-hidden" ref={emblaRef}>
-        <div
-          className="flex touch-pan-y"
-          style={{ marginLeft: `calc(${SLIDE_GAP} * -1)` }}
-        >
-          {HERO_SLIDES.map((slide, index) => (
-            <div
-              key={`${slide.alt}-${index}`}
-              className="min-w-0 shrink-0 grow-0 basis-full"
-              style={{ paddingLeft: SLIDE_GAP }}
+    <div className="relative mx-auto w-full max-w-[min(100%,440px)]">
+      <div
+        className="relative mx-auto w-full max-w-[min(100%,430px)]"
+        style={{
+          aspectRatio: `${heroFrame.width} / ${heroFrame.height}`,
+        }}
+      >
+        <div className={HERO_FRAME_INNER_IMAGE_CLASS}>
+          <AnimatePresence initial={false} mode="wait">
+            <motion.div
+              key={`hero-image-${currentStep}`}
+              className="absolute inset-0"
+              initial={{
+                x: transitionDirection > 0 ? 24 : -24,
+                opacity: 0,
+              }}
+              animate={{ x: 0, opacity: 1 }}
+              exit={{
+                x: transitionDirection > 0 ? -24 : 24,
+                opacity: 0,
+              }}
+              transition={{ duration: 0.28, ease: "easeOut" }}
             >
-              <div className={HERO_IMAGE_FRAME_CLASS}>
-                <Image
-                  src={slide.src}
-                  alt={slide.alt}
-                  fill
-                  className="object-cover object-center"
-                  sizes="(max-width: 768px) 85vw, 390px"
-                  priority={index === 0}
-                />
-              </div>
-            </div>
-          ))}
+              <Image
+                src={activeSlide.src}
+                alt={activeSlide.alt}
+                fill
+                className="object-cover object-center"
+                sizes="(max-width: 768px) 82vw, 430px"
+                priority={currentStep === 1}
+              />
+            </motion.div>
+          </AnimatePresence>
         </div>
+
+        <Image
+          src={heroFrame}
+          alt=""
+          fill
+          className="pointer-events-none select-none object-contain"
+          sizes="(max-width: 768px) 82vw, 430px"
+          priority
+        />
       </div>
 
       {showControls && (
@@ -126,58 +167,83 @@ function HeroCarousel({
           <button
             type="button"
             onClick={onPrev}
-            className="absolute left-2 top-1/2 z-10 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-[var(--storia-black40)] text-white transition-opacity hover:opacity-80 sm:left-3"
+            className="absolute left-12 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-[var(--storia-white50)] text-[var(--storia-black)] shadow-[0_10px_30px_rgba(33,37,41,0.12)] transition-transform hover:scale-[1.03]"
             aria-label="Previous slide"
           >
-            <ChevronLeft size={18} strokeWidth={1.25} />
+            <ChevronLeft size={20} strokeWidth={1.5} />
           </button>
           <button
             type="button"
             onClick={onNext}
-            className="absolute right-2 top-1/2 z-10 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-[var(--storia-black40)] text-white transition-opacity hover:opacity-80 sm:right-3"
+            className="absolute right-12 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-[var(--storia-white50)] text-[var(--storia-black)] shadow-[0_10px_30px_rgba(33,37,41,0.12)] transition-transform hover:scale-[1.03]"
             aria-label="Next slide"
           >
-            <ChevronRight size={18} strokeWidth={1.25} />
+            <ChevronRight size={20} strokeWidth={1.5} />
           </button>
         </>
       )}
+
+      <div className="pointer-events-none absolute bottom-10 left-1/2 z-10 -translate-x-1/2 rounded-full bg-[var(--storia-white75)] px-3 py-1.5 text-[0.82rem] font-medium text-[var(--storia-blackLight)] shadow-[0_8px_18px_rgba(33,37,41,0.08)] backdrop-blur-sm">
+        <span className="text-[var(--storia-blackLight)]">{currentStep}</span>
+        <span className="px-1 text-[var(--storia-blackLight)]">/</span>
+        <span className="text-[var(--storia-blackLight)]">{totalSteps}</span>
+      </div>
     </div>
   );
 }
 
 export default function HeroSection() {
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const [emblaRef, emblaApi] = useEmblaCarousel({
-    loop: HERO_SLIDES.length > 1,
-    align: "start",
-  });
-
-  const onSelect = useCallback(() => {
-    if (!emblaApi) return;
-    setSelectedIndex(emblaApi.selectedScrollSnap());
-  }, [emblaApi]);
-
-  useEffect(() => {
-    if (!emblaApi) return;
-    onSelect();
-    emblaApi.on("select", onSelect);
-    emblaApi.on("reInit", onSelect);
-    return () => {
-      emblaApi.off("select", onSelect);
-      emblaApi.off("reInit", onSelect);
-    };
-  }, [emblaApi, onSelect]);
+  const [transitionDirection, setTransitionDirection] = useState(1);
+  const [copyMinHeight, setCopyMinHeight] = useState(0);
+  const copyMeasureRefs = useRef<Array<HTMLDivElement | null>>([]);
 
   const scrollPrev = useCallback(() => {
-    emblaApi?.scrollPrev();
-  }, [emblaApi]);
+    setTransitionDirection(-1);
+    setSelectedIndex((currentIndex) =>
+      currentIndex === 0 ? HERO_SLIDES.length - 1 : currentIndex - 1,
+    );
+  }, []);
 
   const scrollNext = useCallback(() => {
-    emblaApi?.scrollNext();
-  }, [emblaApi]);
+    setTransitionDirection(1);
+    setSelectedIndex((currentIndex) =>
+      currentIndex === HERO_SLIDES.length - 1 ? 0 : currentIndex + 1,
+    );
+  }, []);
 
   const showControls = HERO_SLIDES.length > 1;
   const activeSlide = HERO_SLIDES[selectedIndex] ?? HERO_SLIDES[0];
+
+  useEffect(() => {
+    const updateCopyMinHeight = () => {
+      const tallestCopy = copyMeasureRefs.current.reduce((maxHeight, node) => {
+        const nodeHeight = node?.getBoundingClientRect().height ?? 0;
+        return Math.max(maxHeight, nodeHeight);
+      }, 0);
+
+      setCopyMinHeight((currentHeight) => {
+        const roundedHeight = Math.ceil(tallestCopy);
+        return currentHeight === roundedHeight ? currentHeight : roundedHeight;
+      });
+    };
+
+    const resizeObserver = new ResizeObserver(() => {
+      updateCopyMinHeight();
+    });
+
+    copyMeasureRefs.current.forEach((node) => {
+      if (node) {
+        resizeObserver.observe(node);
+      }
+    });
+
+    updateCopyMinHeight();
+
+    return () => {
+      resizeObserver.disconnect();
+    };
+  }, []);
 
   return (
     <section
@@ -185,33 +251,51 @@ export default function HeroSection() {
       className="flex min-h-screen items-center px-[8vw] pb-[120px] pt-28 md:pt-32"
       style={{ background: "var(--storia-beige)" }}
     >
-      <div className="mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-12 md:grid-cols-2 md:gap-16 lg:gap-20">
+      <div className="mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-14 md:grid-cols-[minmax(0,460px)_minmax(0,1fr)] md:gap-16 lg:gap-20">
         <HeroCarousel
-          emblaRef={emblaRef}
+          activeSlide={activeSlide}
           onPrev={scrollPrev}
           onNext={scrollNext}
           showControls={showControls}
+          currentStep={selectedIndex + 1}
+          totalSteps={HERO_SLIDES.length}
+          transitionDirection={transitionDirection}
         />
 
-        <div className="min-w-0" aria-live="polite">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={selectedIndex}
-              initial={{ opacity: 0, x: 16 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -12 }}
-              transition={{ duration: 0.4 }}
-            >
-              {activeSlide.title && (
-                <h3 className="mb-4 font-display text-[1.35rem] font-semibold text-[var(--storia-black)]">
-                  {activeSlide.title}
-                </h3>
-              )}
-              <Text size="large" className="whitespace-pre-line">
-                {activeSlide.content}
-              </Text>
-            </motion.div>
-          </AnimatePresence>
+        <div className="relative min-w-0 max-w-[560px]">
+          <Eyebrow className="mb-5 text-[0.82rem] tracking-[0.28em] text-[var(--storia-orange)]">
+            About Me
+          </Eyebrow>
+
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-x-0 top-[calc(0.82rem+1.25rem)] -z-10 opacity-0"
+          >
+            {HERO_SLIDES.map((slide, index) => (
+              <div
+                key={`${slide.alt}-measure-${index}`}
+                ref={(node) => {
+                  copyMeasureRefs.current[index] = node;
+                }}
+              >
+                <HeroSlideCopy slide={slide} />
+              </div>
+            ))}
+          </div>
+
+          <div style={{ minHeight: copyMinHeight || undefined }}>
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={selectedIndex}
+                initial={{ opacity: 0, y: 18 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -12 }}
+                transition={{ duration: 0.35, ease: "easeOut" }}
+              >
+                <HeroSlideCopy slide={activeSlide} />
+              </motion.div>
+            </AnimatePresence>
+          </div>
         </div>
       </div>
     </section>
