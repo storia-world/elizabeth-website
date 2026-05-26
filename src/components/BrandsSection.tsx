@@ -103,15 +103,23 @@ export default function BrandsSection() {
           duration={0.7}
           className="min-w-0"
         >
-          <Text className="mb-12">
-            Having developed engaging, culturally resonant brand campaigns
-            across a wide range of categories during my time as an ad(wo)man, I
-            continue to offer brand consultancy services that combine my
-            journalistic and advertising experience, helping institutions,
-            brands and agencies find the sweet spot where culture, media and
-            brands intersect.
+          <Text className="mb-5">
+            I’ve worked with brands including Google, Bumble, Interflora, Nike,
+            Beats by Dre and YouTube, helping shape and front campaigns rooted
+            in culture, identity and social impact.
           </Text>
-
+          <Text className="mb-5">
+            My work sits at the intersection of strategy and storytelling.
+            Behind the scenes, I help brands find the human truth inside a
+            brief: the tension, language and cultural insight that make an idea
+            land. I help brands understand not just what they want to say, but
+            why it matters now, who it needs to reach and how to make it feel
+            culturally alive.
+          </Text>
+          <Text className="mb-5">
+            In front of the camera, I bring those ideas to life with clarity,
+            warmth and authority.
+          </Text>
           <div
             className="flex flex-row flex-wrap items-center"
             style={{ gap: "32px" }}
