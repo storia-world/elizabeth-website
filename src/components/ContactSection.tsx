@@ -6,6 +6,10 @@ import { Button, FadeIn, InputField, Text } from "@/components/common";
 import Image from "next/image";
 
 import contactImg from "@/assets/images/contactImg.jpg";
+import whiteFrame from "@/assets/images/frameWhite.png";
+
+const HERO_FRAME_INNER_IMAGE_CLASS =
+  "absolute inset-x-[7.2%] top-[5.7%] bottom-[5.8%] overflow-hidden bg-[var(--storia-white)]";
 
 const labelStyle: React.CSSProperties = {
   fontWeight: 300,
@@ -22,24 +26,31 @@ function LetsChatLabel({ className = "" }: { className?: string }) {
   );
 }
 
-function PortraitImage({
-  className,
-  heightClass,
-}: {
-  className?: string;
-  heightClass: string;
-}) {
+function PortraitImage({ className }: { className?: string }) {
   return (
     <div className={className}>
       <div
-        className={`relative w-full overflow-hidden rounded-t-lg ${heightClass}`}
+        className="relative mx-auto w-full max-w-[min(100%,430px)]"
+        style={{
+          aspectRatio: `${whiteFrame.width} / ${whiteFrame.height}`,
+        }}
       >
+        <div className={HERO_FRAME_INNER_IMAGE_CLASS}>
+          <Image
+            src={contactImg}
+            alt="Elizabeth Uviebinené portrait"
+            fill
+            className="object-cover object-center"
+            sizes="(max-width: 767px) 280px, 430px"
+          />
+        </div>
+
         <Image
-          src={contactImg}
-          alt="Elizabeth Uviebinené portrait"
+          src={whiteFrame}
+          alt=""
           fill
-          className="object-cover object-center"
-          sizes="(max-width: 767px) 280px, 460px"
+          className="pointer-events-none select-none object-contain opacity-80"
+          sizes="(max-width: 767px) 280px, 430px"
         />
       </div>
     </div>
@@ -209,10 +220,7 @@ export default function ContactSection() {
         >
           <LetsChatLabel className="shrink-0 mb-8 md:mb-0" />
           <div className="flex min-h-0 flex-1 flex-col items-center justify-center">
-            <PortraitImage
-              className="relative w-full max-w-[300px] shrink-0 md:max-w-[460px]"
-              heightClass="h-[400px] md:h-[520px]"
-            />
+            <PortraitImage className="relative w-full max-w-[300px] shrink-0 md:max-w-[430px]" />
           </div>
         </div>
 
