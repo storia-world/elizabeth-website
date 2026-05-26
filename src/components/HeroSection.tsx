@@ -124,9 +124,9 @@ function HeroCarousel({
   transitionDirection,
 }: HeroCarouselProps) {
   return (
-    <div className="relative mx-auto w-full max-w-[min(100%,440px)] md:-translate-y-8">
+    <div className="relative mx-auto w-full max-w-[min(100%,420px)] md:-translate-y-4">
       <div
-        className="relative mx-auto w-full max-w-[min(100%,430px)]"
+        className="relative mx-auto w-full max-w-[min(100%,410px)]"
         style={{
           aspectRatio: `${heroFrame.width} / ${heroFrame.height}`,
         }}
