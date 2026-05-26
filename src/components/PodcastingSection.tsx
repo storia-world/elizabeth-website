@@ -26,7 +26,7 @@ const PODCAST_FEATURES: PodcastFeature[] = [
     linkLabel: "Listen now",
   },
   {
-    title: "Remotely Curious podcast: Motivation",
+    title: "How To Stay Motivated",
     image: podcast2,
     href: "https://experience.dropbox.com/remotely-curious/motivation",
     linkLabel: "Listen now",
