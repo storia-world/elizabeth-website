@@ -20,7 +20,7 @@ type PodcastFeature = {
 
 const PODCAST_FEATURES: PodcastFeature[] = [
   {
-    title: "Turning Your Vision into a Business, with Elizabeth Uviebinené",
+    title: "Turning Your Vision into a Business",
     image: podcast1,
     href: "https://podcasts.apple.com/us/podcast/turning-your-vision-into-a-business-with/id1520695849?i=1000669993287",
     linkLabel: "Listen now",
@@ -32,25 +32,25 @@ const PODCAST_FEATURES: PodcastFeature[] = [
     linkLabel: "Listen now",
   },
   {
-    title: `"Slaying in your lane" with Elizabeth Uviebinené`,
+    title: `Slaying in your lane`,
     image: podcast3,
     href: "https://open.spotify.com/episode/7yyKvJ8kSAGT6ZsWpRsWun",
     linkLabel: "Listen now",
   },
   {
-    title: "Finding Your Personal Power with Elizabeth Uviebinené",
+    title: "Mentorship, and the Power of Storytelling",
     image: podcast4,
     href: "https://podcasts.apple.com/us/podcast/elizabeth-uviebinen%C3%A9-on-yolo-mentorship-and-the/id1703812639?i=1000663169760",
     linkLabel: "Listen now",
   },
   {
-    title: "Finding Your Personal Power with Elizabeth Uviebinené",
+    title: "Finding Your Personal Power",
     image: podcast5,
     href: "https://podcasts.apple.com/gb/podcast/finding-your-personal-power-with-elizabeth-uviebinen%C3%A9/id1591250657?i=1000615438320",
     linkLabel: "Listen now",
   },
   {
-    title: "How to Shift Gears & Own Your Story with Elizabeth Uviebinené",
+    title: "How to Shift Gears & Own Your Story",
     image: podcast6,
     href: "https://open.spotify.com/episode/0G11iHppWlHURmMX1LYoK9?si=8743142dc2e2444d&nd=1&dlsi=00b84cd2c6af4b9e",
     linkLabel: "Listen now",
@@ -78,7 +78,12 @@ function PodcastCard({
       className="min-w-0"
     >
       <article className="flex h-full flex-col">
-        <a href={feature.href} className="group block">
+        <a
+          href={feature.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group block"
+        >
           <div className="relative aspect-square overflow-hidden bg-[var(--storia-coffee)]">
             <Image
               src={feature.image}
@@ -97,6 +102,8 @@ function PodcastCard({
         <div className="mt-6">
           <a
             href={feature.href}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center justify-center border border-[var(--storia-black40)] px-5 py-3 font-body text-[0.92rem] tracking-[0.04em] text-[var(--storia-black)] transition-colors duration-200 hover:bg-[var(--storia-white40)]"
           >
             {feature.linkLabel}
