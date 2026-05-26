@@ -97,7 +97,7 @@ function SpeakingIntro() {
                     ?.scrollIntoView({ behavior: "smooth" })
                 }
               >
-                ENQUIRE
+                Book Elizabeth to Speak
               </Button>
             </div>
           </div>

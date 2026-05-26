@@ -71,7 +71,7 @@ const HERO_SLIDES: HeroSlide[] = [
     src: storyImg7,
     alt: "Elizabeth Uviebinené — Building Storia",
     title: "Building Storia",
-    content: `Then came Storia. What started as thoughts in my Notes app became an AI-powered self-reflection platform helping people better understand themselves, their emotions and the lives they want to build.`,
+    content: `Then came Storia. What began as an idea in my Notes app became an AI-powered self-reflection app that helps people turn emotional noise into clarity, spot the patterns shaping their lives, and move through change with more self-trust.`,
   },
   {
     src: storyImg8,

@@ -238,13 +238,14 @@ export default function Nav() {
             setManualActiveSection("#about");
             scrollToSection("#about");
           }}
-          className="font-display font-light text-[var(--storia-black)] transition-opacity hover:opacity-80"
+          className="inline-flex flex-col font-display font-light leading-[1.05] text-[var(--storia-black)] transition-opacity hover:opacity-80 text-center"
           style={{
             fontSize: "1.4rem",
             letterSpacing: "0.15em",
           }}
         >
-          Elizabeth
+          <span>Elizabeth</span>
+          <span>Uviebinene</span>
         </a>
 
         {/* Desktop nav links */}
@@ -265,7 +266,7 @@ export default function Nav() {
         <div className="flex items-center gap-4">
           <span className="relative hidden md:inline-block">
             <Button color="var(--storia-orange)" onClick={handleCtaClick}>
-              {"Book Elizabeth to Speak"}
+              {"Contact"}
             </Button>
           </span>
 
