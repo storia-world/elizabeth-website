@@ -77,7 +77,8 @@ const HERO_SLIDES: HeroSlide[] = [
     src: storyImg8,
     alt: "Elizabeth Uviebinené — Today",
     title: "Today",
-    content: `Today, my work sits at the intersection of storytelling, technology and emotional health. Whether through books, speaking or building products, I'm interested in one thing: helping people better understand who they are — and who they're becoming.`,
+    content: `From books to brands to building products people love, I’m interested in one thing: helping people better understand who they are and who they’re becoming.
+\nMy work is about giving people language for the lives they’re living and tools for the futures they’re trying to build.`,
   },
 ];
 
