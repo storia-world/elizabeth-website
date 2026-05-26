@@ -32,7 +32,7 @@ const PODCAST_FEATURES: PodcastFeature[] = [
     linkLabel: "Listen now",
   },
   {
-    title: `Slaying in your lane`,
+    title: `How to Follow Your Passions`,
     image: podcast3,
     href: "https://open.spotify.com/episode/7yyKvJ8kSAGT6ZsWpRsWun",
     linkLabel: "Listen now",
