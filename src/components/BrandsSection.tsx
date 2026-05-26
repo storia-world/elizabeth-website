@@ -5,6 +5,7 @@ import Image, { StaticImageData } from "next/image";
 
 import { Eyebrow, FadeIn, Section, Text } from "@/components/common";
 
+import brandImg from "@/assets/images/brandImg.png";
 import logoBumble from "@/assets/images/logoBumble.png";
 import logoGoogle from "@/assets/images/logoGoogle.png";
 import logoInterflora from "@/assets/images/logoInterflora.png";
@@ -22,70 +23,24 @@ const BRAND_LOGOS: {
   { id: "interflora", src: logoInterflora, alt: "Interflora", height: 44 },
 ];
 
-function AdAgeClippingCard() {
+function ImageCard() {
   return (
-    <div
-      style={{
-        transformOrigin: "center center",
-        background: "white",
-        borderRadius: "12px",
-        padding: "24px",
-        boxShadow: "0 4px 40px rgba(0,0,0,0.08)",
-        overflow: "hidden",
-      }}
+    <a
+      href="https://adage.com/article/special-report-leading-women/leading-women-europe-2021-elizabeth-uviebinene-uncommon-creative-studio/2343386/"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Open Ad Age feature on Elizabeth Uviebinené"
+      className="group block overflow-hidden rounded-[12px] bg-white shadow-[0_4px_40px_rgba(0,0,0,0.08)] transition-transform duration-300 hover:-translate-y-1"
     >
-      <p
-        className="font-display font-normal text-[var(--storia-black)]"
-        style={{
-          fontSize: "1.2rem",
-          letterSpacing: "0.05em",
-          borderBottom: "1px solid var(--storia-black15)",
-          paddingBottom: "8px",
-          marginBottom: "12px",
-        }}
-      >
-        AdAge
-      </p>
-
-      <p
-        className="font-body font-light text-[var(--storia-gray)]"
-        style={{ fontSize: "0.6rem", marginBottom: "16px" }}
-      >
-        Latest ▾ &nbsp; Editor&apos;s Picks ▾ &nbsp; Most Popular ▾
-      </p>
-
-      <h3
-        className="font-body font-bold text-[var(--storia-black)]"
-        style={{ fontSize: "0.85rem", lineHeight: 1.3 }}
-      >
-        ELIZABETH UVIEBINENÉ CONNECTS BRANDS TO CULTURE
-      </h3>
-
-      <p
-        className="font-body font-light text-[var(--storia-blackLight)]"
-        style={{ fontSize: "0.75rem", marginTop: "8px" }}
-      >
-        Uncommon Creative Studio&apos;s brand strategist is also accomplished
-        columnist and author
-      </p>
-
-      <p
-        className="font-body font-light text-[var(--storia-gray)]"
-        style={{
-          fontSize: "0.65rem",
-          marginTop: "6px",
-          marginBottom: "16px",
-        }}
-      >
-        By Illyse Liffreing, Published June 28, 2021
-      </p>
-
-      <div
-        className="rounded bg-[var(--storia-coffee)]"
-        style={{ height: "180px", borderRadius: "4px" }}
-        aria-hidden
+      <Image
+        src={brandImg}
+        alt="AdAge feature on Elizabeth Uviebinené connecting brands to culture"
+        width={brandImg.width}
+        height={brandImg.height}
+        className="h-auto w-full transition-transform duration-300 group-hover:scale-[1.01]"
+        priority
       />
-    </div>
+    </a>
   );
 }
 
@@ -100,7 +55,7 @@ export default function BrandsSection() {
       </FadeIn>
 
       <div className="mt-14 grid grid-cols-1 items-center gap-20 md:grid-cols-[42%_55%] md:gap-[80px]">
-        <AdAgeClippingCard />
+        <ImageCard />
 
         <FadeIn
           direction="right"
