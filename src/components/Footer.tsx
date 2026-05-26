@@ -50,7 +50,7 @@ export default function Footer() {
         className="font-display text-center"
         style={{
           fontWeight: 400,
-          fontSize: "1.6rem",
+          fontSize: "2rem",
           color: "var(--storia-black)",
         }}
       >

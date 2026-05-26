@@ -4,27 +4,20 @@ import Image, { StaticImageData } from "next/image";
 
 import { FadeIn, Section } from "@/components/common";
 
-import logoHubSpot from "@/assets/images/logoHubSpot.png";
-import logoIntuit from "@/assets/images/logoIntuit.png";
-import logoPinterest from "@/assets/images/logoPinterest.png";
-import logoSantander from "@/assets/images/logoSantander.png";
-import logoTommyHilfiger from "@/assets/images/logoTommyHilfiger.png";
-import logoLathamWatkins from "@/assets/images/logoLatham&Watkins.png";
-import logoWomenInFinance from "@/assets/images/logoWomenInFinance.png";
+import logoAdobe from "@/assets/images/logoAdobe.png";
+import logoGoogle from "@/assets/images/logoGoogle.png";
+import logoMeta from "@/assets/images/logoMeta.png";
+import logoSoftBank from "@/assets/images/logoSoftBank.png";
+import logoSpotify from "@/assets/images/logoSpotify.png";
+import logoTortoise from "@/assets/images/logoTortoise.png";
 
 const CLIENT_LOGOS = [
-  { id: "hubspot", src: logoHubSpot, alt: "HubSpot", height: 18 },
-  { id: "intuit", src: logoIntuit, alt: "Intuit", height: 20 },
-  { id: "santander", src: logoSantander, alt: "Santander", height: 20 },
-  { id: "pinterest", src: logoPinterest, alt: "Pinterest", height: 16 },
-  { id: "tommy", src: logoTommyHilfiger, alt: "Tommy Hilfiger", height: 8 },
-  { id: "latham", src: logoLathamWatkins, alt: "Latham & Watkins", height: 10 },
-  {
-    id: "wif",
-    src: logoWomenInFinance,
-    alt: "Women in Finance Summit & Awards Series",
-    height: 28,
-  },
+  { id: "google", src: logoGoogle, alt: "Google", height: 22 },
+  { id: "meta", src: logoMeta, alt: "Meta", height: 20 },
+  { id: "softbank", src: logoSoftBank, alt: "SoftBank", height: 18 },
+  { id: "adobe", src: logoAdobe, alt: "Adobe", height: 20 },
+  { id: "tortoise", src: logoTortoise, alt: "Tortoise", height: 22 },
+  { id: "spotify", src: logoSpotify, alt: "Spotify", height: 24 },
 ] as const;
 
 function ClientLogo({
