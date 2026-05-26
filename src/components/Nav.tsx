@@ -8,12 +8,12 @@ import { useScrollY } from "@/lib/useScrollY";
 
 const NAV_LINKS = [
   { label: "About", href: "#about" },
-  { label: "Books", href: "#books" },
-  { label: "Podcast", href: "#podcasting" },
+  { label: "Author", href: "#books" },
   { label: "Speaker", href: "#speaker" },
-  { label: "Press", href: "#press" },
+  { label: "Podcasts", href: "#podcasting" },
   { label: "Founder", href: "#founder" },
   { label: "Brands", href: "#brands" },
+  { label: "Press", href: "#press" },
 ];
 
 const SECTION_IDS = NAV_LINKS.map((link) => link.href.slice(1));

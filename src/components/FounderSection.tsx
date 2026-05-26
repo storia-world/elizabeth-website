@@ -7,8 +7,9 @@ import Image, { StaticImageData } from "next/image";
 import { Eyebrow, FadeIn, Section, Text } from "@/components/common";
 
 import appOfTheDayBadge from "@/assets/images/appOfTheDay.png";
+import appleStory1 from "@/assets/images/appleStory1.png";
+import appleStory2 from "@/assets/images/appleStory2.png";
 import storiaCommunity from "@/assets/images/storiaCommunity.png";
-import storiaEcho from "@/assets/images/storiaEcho.png";
 import storiaHomepage from "@/assets/images/storiaHomepage.png";
 import storiaInsights from "@/assets/images/storiaInsights.png";
 
@@ -17,11 +18,13 @@ type FounderSlide = {
   alt: string;
 };
 
+type AppStoreStory = {
+  title: string;
+  image: StaticImageData;
+  href: string;
+};
+
 const FOUNDER_SLIDES: FounderSlide[] = [
-  {
-    src: storiaEcho,
-    alt: "Storia Echo screen on iPhone",
-  },
   {
     src: storiaHomepage,
     alt: "Storia homepage screen on iPhone",
@@ -36,6 +39,39 @@ const FOUNDER_SLIDES: FounderSlide[] = [
   },
 ];
 
+const APP_OF_THE_DAY_STORIES = [
+  {
+    title: "The journaling app helping people reconnect with themselves",
+    image: appleStory1,
+    href: "https://apps.apple.com/gb/story/id1767632768",
+  },
+  {
+    title: "How Storia became a daily wellbeing ritual",
+    image: appleStory2,
+    href: "https://apps.apple.com/us/story/id1869143479",
+  },
+] as const satisfies readonly AppStoreStory[];
+
+function AppStoreStoryCard({ story }: { story: AppStoreStory }) {
+  return (
+    <a
+      href={story.href}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={story.title}
+      className="group block overflow-hidden rounded-[1.5rem] shadow-[0_14px_30px_rgba(33,37,41,0.08)] transition-transform duration-300 hover:-translate-y-1"
+    >
+      <Image
+        src={story.image}
+        alt={story.title}
+        width={story.image.width}
+        height={story.image.height}
+        className="h-auto w-full transition-transform duration-300 group-hover:scale-[1.01]"
+      />
+    </a>
+  );
+}
+
 function FounderImageCarousel() {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -48,6 +84,20 @@ function FounderImageCarousel() {
     if (!emblaApi) return;
     setSelectedIndex(emblaApi.selectedScrollSnap());
   }, [emblaApi]);
+
+  const handleSlideClick = useCallback(
+    (index: number) => {
+      if (!emblaApi) return;
+
+      if (index === selectedIndex) {
+        emblaApi.scrollTo((index + 1) % FOUNDER_SLIDES.length);
+        return;
+      }
+
+      emblaApi.scrollTo(index);
+    },
+    [emblaApi, selectedIndex],
+  );
 
   useEffect(() => {
     if (!emblaApi) return;
@@ -64,7 +114,10 @@ function FounderImageCarousel() {
 
   return (
     <div className="mx-auto w-full max-w-[360px] sm:max-w-[390px]">
-      <div className="overflow-hidden px-0.5 sm:px-1" ref={emblaRef}>
+      <div
+        className="cursor-grab overflow-hidden px-0.5 active:cursor-grabbing sm:px-1"
+        ref={emblaRef}
+      >
         <div className="-ml-1.5 flex touch-pan-y sm:-ml-2">
           {FOUNDER_SLIDES.map((slide, index) => {
             const active = index === selectedIndex;
@@ -74,10 +127,20 @@ function FounderImageCarousel() {
                 key={slide.alt}
                 className="min-w-0 shrink-0 grow-0 basis-[66%] pl-1.5 sm:basis-[64%] sm:pl-2"
               >
-                <div
-                  className={`transition-all duration-300 ease-out ${
-                    active ? "scale-100 opacity-100" : "scale-[0.84] opacity-55"
+                <button
+                  type="button"
+                  onClick={() => handleSlideClick(index)}
+                  className={`block w-full cursor-pointer rounded-[2rem] transition-all duration-300 ease-out focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400/70 focus-visible:ring-offset-4 ${
+                    active
+                      ? "scale-100 opacity-100 hover:-translate-y-1"
+                      : "scale-[0.84] opacity-55 hover:opacity-80"
                   }`}
+                  aria-label={
+                    active
+                      ? `View next Storia screen after ${slide.alt}`
+                      : `View ${slide.alt}`
+                  }
+                  aria-pressed={active}
                 >
                   <Image
                     src={slide.src}
@@ -88,11 +151,32 @@ function FounderImageCarousel() {
                     className="pointer-events-none h-auto w-full select-none drop-shadow-[0_18px_36px_rgba(33,37,41,0.08)]"
                     priority={index === 0}
                   />
-                </div>
+                </button>
               </div>
             );
           })}
         </div>
+      </div>
+
+      <div className="mt-10 flex items-center justify-center gap-2.5">
+        {FOUNDER_SLIDES.map((slide, index) => {
+          const active = index === selectedIndex;
+
+          return (
+            <button
+              key={slide.alt}
+              type="button"
+              onClick={() => handleSlideClick(index)}
+              aria-label={`Go to ${slide.alt}`}
+              aria-pressed={active}
+              className={`rounded-full transition-all duration-300 ${
+                active
+                  ? "h-2.5 w-11 bg-[var(--storia-blue)]"
+                  : "h-2.5 w-2.5 bg-neutral-300/70 hover:bg-neutral-400/75"
+              }`}
+            />
+          );
+        })}
       </div>
     </div>
   );
@@ -125,14 +209,20 @@ export default function FounderSection() {
             beautifully designed.`}
           </Text>
 
-          <div className="mt-10 flex justify-center" style={{ marginTop: 40 }}>
+          <div className="mt-10" style={{ marginTop: 40 }}>
             <Image
               src={appOfTheDayBadge}
               alt="App Store App of the Day"
               width={appOfTheDayBadge.width}
               height={appOfTheDayBadge.height}
-              className="h-auto w-[200px] max-w-full"
+              className="mx-auto h-auto w-[250px] max-w-full"
             />
+
+            {/* <div className="mt-8 grid gap-4 sm:grid-cols-2">
+              {APP_OF_THE_DAY_STORIES.map((story) => (
+                <AppStoreStoryCard key={story.href} story={story} />
+              ))}
+            </div> */}
           </div>
         </FadeIn>
       </div>

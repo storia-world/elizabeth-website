@@ -5,7 +5,7 @@ import { useState } from "react";
 import { Button, FadeIn, InputField, Text } from "@/components/common";
 import Image from "next/image";
 
-import founderPortrait from "@/assets/images/founder.jpeg";
+import contactImg from "@/assets/images/contactImg.jpg";
 
 const labelStyle: React.CSSProperties = {
   fontWeight: 300,
@@ -35,7 +35,7 @@ function PortraitImage({
         className={`relative w-full overflow-hidden rounded-t-lg ${heightClass}`}
       >
         <Image
-          src={founderPortrait}
+          src={contactImg}
           alt="Elizabeth Uviebinené portrait"
           fill
           className="object-cover object-center"
@@ -81,17 +81,32 @@ function ContactForm({
           fontWeight: 600,
           fontSize: "2.8rem",
           color: "var(--storia-blackLight)",
-          marginBottom: 40,
         }}
       >
         Get in touch
       </h2>
 
+      <div className="mb-10 max-w-2xl">
+        <Text size="small">
+          For speaking engagements, media enquiries or collaboration
+          opportunities, please get in touch. Liz works with organisations,
+          leadership teams, brands and media outlets across the UK and
+          internationally.
+        </Text>
+        <Text size="small" className="mt-4">
+          Please complete the form below or email:{" "}
+          <a
+            href="mailto:elizabeth@storia.world"
+            className="underline underline-offset-4 transition-opacity hover:opacity-75"
+          >
+            elizabeth@storia.world
+          </a>
+        </Text>
+      </div>
+
       {submitted ? (
         <FadeIn trigger="mount" direction="up" distance={8} duration={0.5}>
-          <Text size="large">
-            Thanks, I&apos;ll be in touch ✦
-          </Text>
+          <Text size="large">Thanks, I&apos;ll be in touch ✦</Text>
         </FadeIn>
       ) : (
         <div>

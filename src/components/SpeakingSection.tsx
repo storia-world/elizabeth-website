@@ -1,6 +1,9 @@
 "use client";
 
 import { Button, Eyebrow, FadeIn, Section, Text } from "@/components/common";
+import Image from "next/image";
+
+import speakerImg from "@/assets/images/speakerImg.jpg";
 
 const SPEAKING_TOPICS = [
   "Reframing failure as data acquisition",
@@ -25,11 +28,20 @@ function SpeakingIntro() {
           style={{
             aspectRatio: "4 / 5",
             borderRadius: 8,
-            background: "var(--storia-coffee)",
             boxShadow: "0 20px 50px rgba(0, 0, 0, 0.1)",
+            overflow: "hidden",
           }}
-          aria-hidden
-        />
+        >
+          <div className="relative h-full w-full">
+            <Image
+              src={speakerImg}
+              alt="Elizabeth Uviebinené speaking at an event"
+              fill
+              className="object-cover"
+              sizes="(max-width: 1023px) 100vw, 380px"
+            />
+          </div>
+        </FadeIn>
 
         <FadeIn direction="right" distance={30} duration={0.7} delay={0.15}>
           <p
@@ -48,7 +60,7 @@ function SpeakingIntro() {
             delivered talks and workshops to numerous organisations, such as
             Facebook, Google, Bumble, Spotify and more.
           </Text>
-          <Text className="mt-4">
+          <Text className="mt-4 text-[var(--storia-black)]">
             {`Elizabeth Uviebinené's talks inspire, empower and educate, leaving
             audiences with new perspectives on class, politics, feminism,
             racism, and how they intersect.`}
@@ -63,7 +75,7 @@ function SpeakingIntro() {
               {SPEAKING_TOPICS.map((topic) => (
                 <li
                   key={topic}
-                  className="border-b border-[var(--storia-black15)] pb-3 font-display text-[1.02rem] font-medium leading-[1.35] text-[var(--storia-blackLight)]"
+                  className="border-b border-[var(--storia-black15)] pb-3 font-display text-[1.02rem] font-medium leading-[1.35] text-[var(--storia-black)]"
                 >
                   {topic}
                 </li>
@@ -71,7 +83,7 @@ function SpeakingIntro() {
             </ul>
 
             <div className="mt-7">
-              <p className="mb-6 font-display text-[0.95rem] italic leading-[1.7] text-[var(--storia-blackLight)]">
+              <p className="mb-6 font-display text-[0.95rem] italic leading-[1.7] text-[var(--storia-black)]">
                 {`Elizabeth's keynotes and fireside chats are designed to inspire and
             empower, leaving audiences with a new perspective on failure,
             learning and growth.`}

@@ -5,6 +5,10 @@ import Image, { StaticImageData } from "next/image";
 import { Eyebrow, FadeIn, Section } from "@/components/common";
 
 import storyImg6 from "@/assets/images/storyImg6.jpg";
+import podcast1 from "@/assets/images/podcast1.png";
+import podcast2 from "@/assets/images/podcast2.png";
+import podcast3 from "@/assets/images/podcast3.jpeg";
+import podcast4 from "@/assets/images/podcast4.png";
 
 type PodcastFeature = {
   title: string;
@@ -15,27 +19,27 @@ type PodcastFeature = {
 
 const PODCAST_FEATURES: PodcastFeature[] = [
   {
-    title: "On storytelling, ambition and the art of reinvention",
-    image: storyImg6,
-    href: "#",
+    title: "Turning Your Vision into a Business, with Elizabeth Uviebinené",
+    image: podcast1,
+    href: "https://podcasts.apple.com/us/podcast/turning-your-vision-into-a-business-with/id1520695849?i=1000669993287",
     linkLabel: "Listen now",
   },
   {
-    title: "Building Storia and creating space for emotional health",
-    image: storyImg6,
-    href: "#",
+    title: "Remotely Curious podcast: Motivation",
+    image: podcast2,
+    href: "https://experience.dropbox.com/remotely-curious/motivation",
     linkLabel: "Listen now",
   },
   {
-    title: "Writing fiction, identity and finding your own voice",
-    image: storyImg6,
-    href: "#",
+    title: `"Slaying in your lane" with Elizabeth Uviebinené`,
+    image: podcast3,
+    href: "https://open.spotify.com/episode/7yyKvJ8kSAGT6ZsWpRsWun",
     linkLabel: "Listen now",
   },
   {
-    title: "What modern success costs and how to redefine it",
-    image: storyImg6,
-    href: "#",
+    title: "Finding Your Personal Power with Elizabeth Uviebinené",
+    image: podcast4,
+    href: "https://podcasts.apple.com/us/podcast/elizabeth-uviebinen%C3%A9-on-yolo-mentorship-and-the/id1703812639?i=1000663169760",
     linkLabel: "Listen now",
   },
   {
@@ -74,7 +78,7 @@ function PodcastCard({
     >
       <article className="flex h-full flex-col">
         <a href={feature.href} className="group block">
-          <div className="relative aspect-[5/4] overflow-hidden bg-[var(--storia-coffee)]">
+          <div className="relative aspect-square overflow-hidden bg-[var(--storia-coffee)]">
             <Image
               src={feature.image}
               alt={feature.title}

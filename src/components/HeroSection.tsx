@@ -9,8 +9,13 @@ import { Eyebrow, Text } from "@/components/common";
 import heroFrame from "@/assets/images/frame.png";
 import founderPortrait from "@/assets/images/founder.jpeg";
 import storyImg1 from "@/assets/images/storyImg1.jpg";
+import storyImg2 from "@/assets/images/storyImg2.jpg";
 import storyImg3 from "@/assets/images/storyImg3.jpg";
+import storyImg4 from "@/assets/images/storyImg4.png";
+import storyImg5 from "@/assets/images/storyImg5.jpg";
 import storyImg6 from "@/assets/images/storyImg6.jpg";
+import storyImg7 from "@/assets/images/storyImg7.jpg";
+import storyImg8 from "@/assets/images/storyImg8.png";
 
 type HeroSlide = {
   src: StaticImageData;
@@ -32,7 +37,7 @@ const HERO_SLIDES: HeroSlide[] = [
     content: `Raised in Peckham by Nigerian parents, I grew up surrounded by big personalities, big dreams and even bigger expectations. Long before the books, the talks or the company, I was just a curious girl trying to figure out how ambition, identity and confidence fit together.`,
   },
   {
-    src: founderPortrait,
+    src: storyImg2,
     alt: "Elizabeth Uviebinené — University",
     title: "University",
     content: `Getting into University of Warwick cracked my world open. It was the first time I realised how much bigger life could be — and how important it was to find my own voice inside rooms that weren't always built for people like me.`,
@@ -44,13 +49,13 @@ const HERO_SLIDES: HeroSlide[] = [
     content: `My first step into the corporate world was both exciting and disorientating. I learned how power works, how confidence is performed, and how many people are quietly trying to figure life out behind polished LinkedIn profiles and office titles.`,
   },
   {
-    src: founderPortrait,
+    src: storyImg4,
     alt: "Elizabeth Uviebinené — Becoming an Author",
     title: "Becoming an Author",
     content: `I co-authored Slay in Your Lane with my best friend and watched it grow into something far bigger than either of us imagined. What started as conversations between two women became a cultural conversation about ambition, race, identity and belonging.`,
   },
   {
-    src: founderPortrait,
+    src: storyImg5,
     alt: "Elizabeth Uviebinené — Financial Times Columnist",
     title: "Financial Times Columnist",
     content: `Becoming a columnist at the Financial Times taught me the power of giving people language for things they feel but struggle to explain. I wrote about work, ambition, culture and the messy reality of modern life in a rapidly changing world.`,
@@ -62,13 +67,13 @@ const HERO_SLIDES: HeroSlide[] = [
     content: `Writing The Reset came from noticing how many people looked successful on paper but quietly felt exhausted, stuck or disconnected underneath it all. The book explored what happens when the scripts we inherited stop working — and how we rebuild from there.`,
   },
   {
-    src: founderPortrait,
+    src: storyImg7,
     alt: "Elizabeth Uviebinené — Building Storia",
     title: "Building Storia",
     content: `Then came Storia. What started as thoughts in my Notes app became an AI-powered self-reflection platform helping people better understand themselves, their emotions and the lives they want to build.`,
   },
   {
-    src: founderPortrait,
+    src: storyImg8,
     alt: "Elizabeth Uviebinené — Today",
     title: "Today",
     content: `Today, my work sits at the intersection of storytelling, technology and emotional health. Whether through books, speaking or building products, I'm interested in one thing: helping people better understand who they are — and who they're becoming.`,

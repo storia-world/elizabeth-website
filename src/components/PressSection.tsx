@@ -7,7 +7,15 @@ import Image, { StaticImageData } from "next/image";
 
 import { Eyebrow, FadeIn, Section } from "@/components/common";
 
-import pressImage from "@/assets/images/pressImage.png";
+import pressImg1 from "@/assets/images/pressImg1.png";
+import pressImg2 from "@/assets/images/pressImg2.jpeg";
+import pressImg3 from "@/assets/images/pressImg3.png";
+import pressImg4 from "@/assets/images/pressImg4.png";
+import pressImg5 from "@/assets/images/pressImg5.jpg";
+import pressImg6 from "@/assets/images/pressImg6.png";
+import pressImg7 from "@/assets/images/pressImg7.png";
+import pressImg8 from "@/assets/images/pressImg8.jpeg";
+import pressImg9 from "@/assets/images/pressImg9.jpg";
 
 type PressFeature = {
   title: string;
@@ -16,48 +24,62 @@ type PressFeature = {
   href: string;
 };
 
-const PRESS_FEATURE_TITLE =
-  "The Reset - why this book could seriously change your life";
-const PRESS_FEATURE_PUBLICATION = "Marie Claire UK";
-const PRESS_FEATURE_HREF =
-  "https://www.marieclaire.co.uk/life/work/the-reset-book-uviebinene-work-life-balance-738921";
-
 const PRESS_FEATURES: PressFeature[] = [
   {
-    title: PRESS_FEATURE_TITLE,
-    publication: PRESS_FEATURE_PUBLICATION,
-    image: pressImage,
-    href: PRESS_FEATURE_HREF,
+    title: "The Reset — why this book could seriously change your life",
+    publication: "Marie Claire UK",
+    image: pressImg1,
+    href: "https://www.marieclaire.co.uk/life/work/the-reset-book-uviebinene-work-life-balance-738921",
   },
   {
-    title: PRESS_FEATURE_TITLE,
-    publication: PRESS_FEATURE_PUBLICATION,
-    image: pressImage,
-    href: PRESS_FEATURE_HREF,
+    title: "You Have To Nurture The Essence Of Who You Are",
+    publication: "Young Women’s Trust",
+    image: pressImg2,
+    href: "https://www.youngwomenstrust.org/blog/you-have-to-nurture-the-essence-of-who-you-are-an-interview-with-elizabeth-uviebinene/",
   },
   {
-    title: PRESS_FEATURE_TITLE,
-    publication: PRESS_FEATURE_PUBLICATION,
-    image: pressImage,
-    href: PRESS_FEATURE_HREF,
+    title: "The Must-Read Book Empowering Young Black Women",
+    publication: "British Vogue",
+    image: pressImg4,
+    href: "https://www.vogue.co.uk/article/slay-in-your-lane",
   },
   {
-    title: PRESS_FEATURE_TITLE,
-    publication: PRESS_FEATURE_PUBLICATION,
-    image: pressImage,
-    href: PRESS_FEATURE_HREF,
+    title:
+      "Black Women In Business: “How Curiosity And Creativity Led Me To Rewrite The Script”",
+    publication: "Grazia",
+    image: pressImg7,
+    href: "https://graziadaily.co.uk/life/real-life/black-women-in-business-storia-journaling-app/",
   },
   {
-    title: PRESS_FEATURE_TITLE,
-    publication: PRESS_FEATURE_PUBLICATION,
-    image: pressImage,
-    href: PRESS_FEATURE_HREF,
+    title: "The Secrets Behind Elizabeth Uviebinené’s Success",
+    publication: "Sadé Magazine",
+    image: pressImg3,
+    href: "https://sademagazine.co/blogs/news/career-corner-elizabeth-uviebinene",
   },
   {
-    title: PRESS_FEATURE_TITLE,
-    publication: PRESS_FEATURE_PUBLICATION,
-    image: pressImage,
-    href: PRESS_FEATURE_HREF,
+    title: "Slay In Your Lane: The Black Girl Bible",
+    publication: "OX Magazine",
+    image: pressImg5,
+    href: "https://www.oxmag.co.uk/articles/slay-in-your-lane-the-black-girl-bible/",
+  },
+  {
+    title: "A Letter To My Younger Self",
+    publication: "Papier",
+    image: pressImg6,
+    href: "https://www.papier.com/thefold/articles/a-letter-to-my-younger-self-by-elizabeth-uviebinene",
+  },
+  {
+    title:
+      "This Bestselling Author’s AI-Guided Journaling App Wants To Unleash Your Inner Voice",
+    publication: "People of Color in Tech",
+    image: pressImg8,
+    href: "https://peopleofcolorintech.com/articles/this-bestselling-authors-ai-guided-journaling-app-wants-to-unleash-your-inner-voice/",
+  },
+  {
+    title: "What Do The Female Icons Of Tomorrow Look Like?",
+    publication: "Stylist",
+    image: pressImg9,
+    href: "https://www.stylist.co.uk/life/female-singer-female-artist-female-icons-slay-in-your-lane/357352",
   },
 ];
 
@@ -142,7 +164,7 @@ export default function PressSection() {
         </button>
 
         <div className="overflow-hidden" ref={emblaRef}>
-          <div className="-ml-5 flex touch-pan-y lg:-ml-8">
+          <div className="-ml-5 flex touch-pan-y lg:-ml-6">
             {PRESS_FEATURES.map((feature, index) => (
               <PressCard key={feature.title} feature={feature} index={index} />
             ))}
