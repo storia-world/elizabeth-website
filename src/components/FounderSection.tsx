@@ -59,7 +59,7 @@ function AppStoreStoryCard({ story }: { story: AppStoreStory }) {
       target="_blank"
       rel="noopener noreferrer"
       aria-label={story.title}
-      className="group block overflow-hidden rounded-[1.5rem] shadow-[0_14px_30px_rgba(33,37,41,0.08)] transition-transform duration-300 hover:-translate-y-1"
+      className="group block overflow-hidden shadow-[0_14px_30px_rgba(33,37,41,0.08)] transition-transform duration-300 hover:-translate-y-1"
     >
       <Image
         src={story.image}
@@ -209,20 +209,25 @@ export default function FounderSection() {
             beautifully designed.`}
           </Text>
 
-          <div className="mt-10" style={{ marginTop: 40 }}>
+          <div
+            className="mt-10 flex items-center justify-center gap-6 overflow-x-auto pb-1 sm:gap-6"
+            style={{ marginTop: 40 }}
+          >
+            <div className="w-[110px] shrink-0 sm:w-[125px]">
+              <AppStoreStoryCard story={APP_OF_THE_DAY_STORIES[0]} />
+            </div>
+
             <Image
               src={appOfTheDayBadge}
               alt="App Store App of the Day"
               width={appOfTheDayBadge.width}
               height={appOfTheDayBadge.height}
-              className="mx-auto h-auto w-[250px] max-w-full"
+              className="h-auto w-[150px] max-w-none shrink-0 sm:w-[175px]"
             />
 
-            {/* <div className="mt-8 grid gap-4 sm:grid-cols-2">
-              {APP_OF_THE_DAY_STORIES.map((story) => (
-                <AppStoreStoryCard key={story.href} story={story} />
-              ))}
-            </div> */}
+            <div className="w-[110px] shrink-0 sm:w-[125px]">
+              <AppStoreStoryCard story={APP_OF_THE_DAY_STORIES[1]} />
+            </div>
           </div>
         </FadeIn>
       </div>
