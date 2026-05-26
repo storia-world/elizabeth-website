@@ -21,7 +21,7 @@ export default function Text({
 }: TextProps) {
   return (
     <Tag
-      className={`font-body font-light text-[var(--storia-blackLight)] ${SIZE_CLASSES[size]} ${className}`.trim()}
+      className={`font-body font-light text-[var(--storia-black)] ${SIZE_CLASSES[size]} ${className}`.trim()}
     >
       {children}
     </Tag>

@@ -6,12 +6,12 @@ import Image from "next/image";
 import speakerImg from "@/assets/images/speakerImg.jpg";
 
 const SPEAKING_TOPICS = [
-  "Reframing failure as data acquisition",
-  "Growth through vulnerability",
-  "Considered risk-taking",
-  "The power of connection",
-  "Promoting psychological safety",
-  "Measuring the value of diversity",
+  "Ambition in an Uncertain World",
+  "The Future of Mental Health",
+  "Identity, Belonging and Modern Work",
+  "The Power of Storytelling",
+  "How to Pivot",
+  "How Culture Shapes Confidence",
 ];
 
 function SpeakingIntro() {
@@ -49,38 +49,29 @@ function SpeakingIntro() {
         </FadeIn>
 
         <FadeIn direction="right" distance={30} duration={0.7} delay={0.15}>
-          <p
-            className="font-display font-light text-[var(--storia-black)]"
-            style={{
-              fontSize: "2.2rem",
-              lineHeight: 1.2,
-              marginBottom: 24,
-            }}
-          >
-            Sought-after speaker
-          </p>
-
-          <Text>
-            Elizabeth Uviebinené is a sought-after public speaker and has
-            delivered talks and workshops to numerous organisations, such as
-            Facebook, Google, Bumble, Spotify and more.
+          <Text className="mb-4">
+            I bring warmth, humour and sharp cultural insight to every room I
+            speak in. Whether I’m talking about ambition, failure, emotional
+            health, the future of work or reinvention, my strength is making big
+            ideas feel human, relatable and useful. I don’t just want audiences
+            to feel inspired in the moment. I want them to leave with a fresh
+            perspective, a greater sense of empowerment and action.
           </Text>
-          <Text className="mt-4 text-[var(--storia-black)]">
-            {`Elizabeth Uviebinené's talks inspire, empower and educate, leaving
-            audiences with new perspectives on class, politics, feminism,
-            racism, and how they intersect.`}
+          <Text className="mb-4">
+            I've worked with a range of companies, including Facebook, Imperial 
+            College London, Google, Tortoise, and Spotify.
           </Text>
 
           <div className="mt-8 w-full shrink-0">
             <p className="mb-4 font-body text-[0.8rem] font-medium uppercase tracking-[0.24em] text-[var(--storia-gray)]">
-              She speaks on
+              Panels, keynotes and fireside chats
             </p>
 
             <ul className="grid list-none grid-cols-1 gap-x-8 gap-y-3 p-0 sm:grid-cols-2">
               {SPEAKING_TOPICS.map((topic) => (
                 <li
                   key={topic}
-                  className="border-b border-[var(--storia-black15)] pb-3 font-display text-[1.02rem] font-medium leading-[1.35] text-[var(--storia-black)]"
+                  className="border-b border-[var(--storia-black15)] pb-3 text-[0.9rem] leading-[1.35] text-[var(--storia-black)]"
                 >
                   {topic}
                 </li>
@@ -88,12 +79,6 @@ function SpeakingIntro() {
             </ul>
 
             <div className="mt-7">
-              <p className="mb-6 font-display text-[0.95rem] italic leading-[1.7] text-[var(--storia-black)]">
-                {`Elizabeth's keynotes and fireside chats are designed to inspire and
-            empower, leaving audiences with a new perspective on failure,
-            learning and growth.`}
-              </p>
-
               <Button
                 color="var(--storia-black)"
                 onClick={() =>
