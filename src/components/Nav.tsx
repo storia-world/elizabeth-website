@@ -265,7 +265,7 @@ export default function Nav() {
         <div className="flex items-center gap-4">
           <span className="relative hidden md:inline-block">
             <Button color="var(--storia-orange)" onClick={handleCtaClick}>
-              {"Let's chat"}
+              {"Book Elizabeth to Speak"}
             </Button>
           </span>
 
@@ -318,7 +318,7 @@ export default function Nav() {
               ))}
               <motion.li variants={menuItem} className="mt-4">
                 <Button color="var(--storia-orange)" onClick={handleCtaClick}>
-                  {"Let's chat"}
+                  {"Book Elizabeth to Speak"}
                 </Button>
               </motion.li>
             </motion.ul>

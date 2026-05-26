@@ -48,23 +48,6 @@ body::before {
   background-size: 128px;
 }
 
-@keyframes marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-.speaking-marquee {
-  animation: marquee 28s linear infinite;
-}
-
-.speaking-marquee:hover {
-  animation-play-state: paused;
-}
-
 @layer utilities {
   .text-balance {
     text-wrap: balance;
