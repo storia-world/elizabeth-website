@@ -13,6 +13,7 @@ const NAV_LINKS = [
   { label: "Podcasts", href: "#podcasting" },
   { label: "Founder", href: "#founder" },
   { label: "Brands", href: "#brands" },
+  { label: "Awards", href: "#awards" },
   { label: "Press", href: "#press" },
 ];
 
@@ -215,7 +216,7 @@ export default function Nav() {
   return (
     <>
       <motion.nav
-        className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 md:px-10"
+        className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-6 md:px-10"
         initial={false}
         animate={{
           backgroundColor: scrolled
