@@ -11,7 +11,7 @@ import pressImg1 from "@/assets/images/pressImg1.png";
 import pressImg2 from "@/assets/images/pressImg2.jpeg";
 import pressImg3 from "@/assets/images/pressImg3.png";
 import pressImg4 from "@/assets/images/pressImg4.png";
-import pressImg5 from "@/assets/images/pressImg5.jpg";
+import pressImg5 from "@/assets/images/pressImg5.png";
 import pressImg6 from "@/assets/images/pressImg6.png";
 import pressImg7 from "@/assets/images/pressImg7.png";
 import pressImg8 from "@/assets/images/pressImg8.jpeg";
@@ -44,8 +44,7 @@ const PRESS_FEATURES: PressFeature[] = [
     href: "https://www.vogue.co.uk/article/slay-in-your-lane",
   },
   {
-    title:
-      "Black Women In Business: “How Curiosity And Creativity Led Me To Rewrite The Script”",
+    title: "How Curiosity And Creativity Led Me To Rewrite The Script",
     publication: "Grazia",
     image: pressImg7,
     href: "https://graziadaily.co.uk/life/real-life/black-women-in-business-storia-journaling-app/",
@@ -57,10 +56,10 @@ const PRESS_FEATURES: PressFeature[] = [
     href: "https://sademagazine.co/blogs/news/career-corner-elizabeth-uviebinene",
   },
   {
-    title: "Slay In Your Lane: The Black Girl Bible",
-    publication: "OX Magazine",
+    title: "A successful career pivot starts with a student mindset",
+    publication: "Financial Times",
     image: pressImg5,
-    href: "https://www.oxmag.co.uk/articles/slay-in-your-lane-the-black-girl-bible/",
+    href: "https://www.ft.com/elizabeth-uviebinene",
   },
   {
     title: "A Letter To My Younger Self",

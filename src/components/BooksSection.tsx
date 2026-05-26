@@ -77,11 +77,11 @@ function BookCard({ book, index }: { book: Book; index: number }) {
         />
       </div>
 
-      <h3 className="font-display text-xl font-light uppercase tracking-wide text-[var(--storia-black)]">
+      <h3 className="font-display text-xl uppercase tracking-wide text-[var(--storia-jetblack)]">
         {book.title}
       </h3>
 
-      <Text size="small" className="mt-5">
+      <Text size="small" className="mt-5 text-[var(--storia-black)]">
         {book.description}
       </Text>
     </FadeIn>
