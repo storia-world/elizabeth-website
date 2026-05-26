@@ -28,13 +28,14 @@ const HERO_SLIDES: HeroSlide[] = [
   {
     src: founderPortrait,
     alt: "Elizabeth Uviebinené — Today",
-    content: `I'm a bestselling author and chart-topping podcaster. I am terrible at Excel spreadsheets and hand-eye coordination. But I can write and I love connecting with people, which is why I launched my Substack, Daylight.`,
+    content: `I’m a founder, author and storyteller driven by curiosity about how people build identity, navigate change and make sense of modern life. 
+    \nOver the last decade, my work has spanned books, columns, speaking and technology, but the thread connecting all of it has always been human behaviour: what we feel, what we hide, what we want, and who we become.`,
   },
   {
     src: storyImg1,
-    alt: "Elizabeth Uviebinené — School Uniform / Peckham",
-    title: "School Uniform / Peckham",
-    content: `Raised in Peckham by Nigerian parents, I grew up surrounded by big personalities, big dreams and even bigger expectations. Long before the books, the talks or the company, I was just a curious girl trying to figure out how ambition, identity and confidence fit together.`,
+    alt: "Elizabeth Uviebinené — Peckham",
+    title: "Peckham",
+    content: `Raised in Peckham by Nigerian parents, I grew up between cultures, codes and expectations, which shaped my thoughts about indepence, identity and where we find belonging.`,
   },
   {
     src: storyImg2,
@@ -104,7 +105,7 @@ function HeroSlideCopy({ slide }: { slide: HeroSlide }) {
 
       <Text
         size="large"
-        className="mt-8 max-w-[42rem] whitespace-pre-line text-[1.05rem] leading-[1.9] text-[var(--storia-blackLight)] sm:text-[1.12rem]"
+        className="mt-8 max-w-[42rem] whitespace-pre-line text-[1.04rem] leading-[1.9] text-[var(--storia-blackLight)] sm:text-[1.10rem]"
       >
         {slide.content}
       </Text>
@@ -122,7 +123,7 @@ function HeroCarousel({
   transitionDirection,
 }: HeroCarouselProps) {
   return (
-    <div className="relative mx-auto w-full max-w-[min(100%,440px)]">
+    <div className="relative mx-auto w-full max-w-[min(100%,440px)] md:-translate-y-8">
       <div
         className="relative mx-auto w-full max-w-[min(100%,430px)]"
         style={{

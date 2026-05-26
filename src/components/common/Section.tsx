@@ -20,7 +20,7 @@ type SectionProps = {
 export default function Section({
   id,
   background = "beige",
-  padding = "120px 8vw",
+  padding = "60px 8vw",
   className = "",
   style,
   children,
