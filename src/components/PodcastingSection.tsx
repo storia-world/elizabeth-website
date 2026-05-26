@@ -4,11 +4,12 @@ import Image, { StaticImageData } from "next/image";
 
 import { Eyebrow, FadeIn, Section } from "@/components/common";
 
-import storyImg6 from "@/assets/images/storyImg6.jpg";
 import podcast1 from "@/assets/images/podcast1.png";
 import podcast2 from "@/assets/images/podcast2.png";
 import podcast3 from "@/assets/images/podcast3.jpeg";
 import podcast4 from "@/assets/images/podcast4.png";
+import podcast5 from "@/assets/images/podcast5.png";
+import podcast6 from "@/assets/images/podcast6.jpeg";
 
 type PodcastFeature = {
   title: string;
@@ -43,15 +44,15 @@ const PODCAST_FEATURES: PodcastFeature[] = [
     linkLabel: "Listen now",
   },
   {
-    title: "From books to brands to building products people love",
-    image: storyImg6,
-    href: "#",
+    title: "Finding Your Personal Power with Elizabeth Uviebinené",
+    image: podcast5,
+    href: "https://podcasts.apple.com/gb/podcast/finding-your-personal-power-with-elizabeth-uviebinen%C3%A9/id1591250657?i=1000615438320",
     linkLabel: "Listen now",
   },
   {
-    title: "Reflection, culture and the conversations shaping a generation",
-    image: storyImg6,
-    href: "#",
+    title: "How to Shift Gears & Own Your Story with Elizabeth Uviebinené",
+    image: podcast6,
+    href: "https://open.spotify.com/episode/0G11iHppWlHURmMX1LYoK9?si=8743142dc2e2444d&nd=1&dlsi=00b84cd2c6af4b9e",
     linkLabel: "Listen now",
   },
 ];
