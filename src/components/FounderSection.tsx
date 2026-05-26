@@ -198,15 +198,27 @@ export default function FounderSection() {
           duration={0.7}
           className="min-w-0"
         >
-          <Text>
-            Elizabeth Uviebinené founded Storia, an award-winning wellbeing app
-            helping people build healthier daily habits through journaling, mood
-            check-ins and community.
+          <Text className="mb-4">
+            A proactive emotional health app helping people turn what they feel
+            into something they can understand, track and grow from.
           </Text>
-          <Text className="mt-5">
-            {`Storia was featured as Apple's App of the Day — a testament to the
-            team's commitment to building something genuinely useful and
-            beautifully designed.`}
+          <Text className="mb-4">
+            Every day, people carry thousands of emotional signals: stress,
+            ambition, uncertainty, confidence, fear, hope, pressure, desire.
+            Most of it disappears before they can learn from it.
+          </Text>
+          <Text className="mb-4">
+            Storia uses AI to help people capture those signals, spot patterns
+            and turn them into personalised insights. The goal is to create the
+            first standardised system for the mind: a way to measure, understand
+            and strengthen human potential with the same clarity we now bring to
+            sleep, fitness and music.
+          </Text>
+          <Text className="mb-4">
+            Since launch, Storia has captured over 40 million words of
+            self-reflection, been recognised by Apple as App of the Day across
+            45+ countries, and helped thousands of people build a deeper
+            relationship with themselves.
           </Text>
 
           <div
