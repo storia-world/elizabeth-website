@@ -185,7 +185,12 @@ function FounderImageCarousel() {
 export default function FounderSection() {
   return (
     <Section id="founder">
-      <Eyebrow>founder</Eyebrow>
+      <FadeIn className="text-center">
+        <Eyebrow>Founder</Eyebrow>
+        <h2 className="font-display text-4xl font-light text-[var(--storia-black)] md:text-5xl">
+          Turning emotion into intelligence
+        </h2>
+      </FadeIn>
 
       <div className="mt-14 grid grid-cols-1 items-center gap-8 md:grid-cols-2 md:gap-6">
         <div className="flex min-w-0 justify-center md:justify-start">

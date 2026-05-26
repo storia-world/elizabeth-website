@@ -17,7 +17,12 @@ const SPEAKING_TOPICS = [
 function SpeakingIntro() {
   return (
     <>
-      <Eyebrow>Speaking</Eyebrow>
+      <FadeIn className="text-center">
+        <Eyebrow>Speaking</Eyebrow>
+        <h2 className="font-display text-4xl font-light text-[var(--storia-black)] md:text-5xl">
+          For rooms ready to think bigger
+        </h2>
+      </FadeIn>
 
       <div className="mt-14 grid grid-cols-1 items-center gap-4 lg:grid-cols-[40%_60%] lg:gap-4">
         <FadeIn

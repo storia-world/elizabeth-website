@@ -147,7 +147,7 @@ export default function PressSection() {
   return (
     <Section id="press">
       <FadeIn className="text-center">
-        <Eyebrow className="justify-center">Press</Eyebrow>
+        <Eyebrow>Press</Eyebrow>
         <h2 className="font-display text-4xl font-light text-[var(--storia-black)] md:text-5xl">
           In the headlines
         </h2>

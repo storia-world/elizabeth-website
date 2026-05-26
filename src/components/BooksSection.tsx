@@ -91,7 +91,7 @@ function BookCard({ book, index }: { book: Book; index: number }) {
 export default function BooksSection() {
   return (
     <Section id="books">
-      <FadeIn>
+      <FadeIn className="text-center">
         <Eyebrow>Books</Eyebrow>
         <h2 className="font-display text-4xl font-light text-[var(--storia-black)] md:text-5xl">
           Written to inspire

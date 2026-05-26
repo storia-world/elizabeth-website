@@ -92,7 +92,12 @@ function AdAgeClippingCard() {
 export default function BrandsSection() {
   return (
     <Section id="brands">
-      <Eyebrow>Brands</Eyebrow>
+      <FadeIn className="text-center">
+        <Eyebrow>Brands</Eyebrow>
+        <h2 className="font-display text-4xl font-light text-[var(--storia-black)] md:text-5xl">
+          A trusted voice
+        </h2>
+      </FadeIn>
 
       <div className="mt-14 grid grid-cols-1 items-center gap-20 md:grid-cols-[42%_55%] md:gap-[80px]">
         <AdAgeClippingCard />
