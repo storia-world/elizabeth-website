@@ -58,32 +58,42 @@ const books: Book[] = [
 const ROW_ONE = books.slice(0, 3);
 const ROW_TWO = books.slice(3, 5);
 
-function BookCard({ book, index }: { book: Book; index: number }) {
+function BookCard({
+  book,
+  index,
+  className = "",
+}: {
+  book: Book;
+  index: number;
+  className?: string;
+}) {
   return (
     <FadeIn
       direction="up"
-      distance={40}
-      delay={index * 0.15}
-      viewportMargin="-80px"
-      className="flex min-w-[220px] flex-shrink-0 flex-col items-center snap-start text-center lg:min-w-0"
+      distance={36}
+      delay={index * 0.08}
+      viewportMargin="-60px"
+      className={`min-w-0 ${className}`.trim()}
     >
-      <div className="relative mb-6 aspect-[2/3] w-[180px] max-w-full overflow-hidden rounded-sm bg-[var(--storia-coffee)] sm:w-[200px]">
-        <Image
-          src={book.cover}
-          alt={`${book.title} book cover`}
-          fill
-          className="object-cover"
-          sizes="200px"
-        />
-      </div>
+      <article className="mx-auto flex max-w-[320px] flex-col items-center text-center sm:max-w-[360px] md:max-w-none lg:max-w-none">
+        <div className="relative mb-5 aspect-[2/3] w-[min(200px,70vw)] overflow-hidden rounded-sm bg-[var(--storia-coffee)] lg:mb-6 lg:w-[200px]">
+          <Image
+            src={book.cover}
+            alt={`${book.title} book cover`}
+            fill
+            className="object-cover"
+            sizes="(max-width: 1023px) 70vw, 200px"
+          />
+        </div>
 
-      <h3 className="font-display text-xl uppercase tracking-wide text-[var(--storia-jetblack)]">
-        {book.title}
-      </h3>
+        <h3 className="font-display text-lg uppercase tracking-wide text-[var(--storia-jetblack)] sm:text-xl">
+          {book.title}
+        </h3>
 
-      <Text size="small" className="mt-5 text-[var(--storia-black)]">
-        {book.description}
-      </Text>
+        <Text size="small" className="mt-4 text-[var(--storia-black)] lg:mt-5">
+          {book.description}
+        </Text>
+      </article>
     </FadeIn>
   );
 }
@@ -98,19 +108,30 @@ export default function BooksSection() {
         </h2>
       </FadeIn>
 
-      <div className="mt-14 flex flex-col gap-12 lg:gap-16">
-        <div
-          className="flex gap-12 overflow-x-auto pb-4 scroll-smooth [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:grid lg:grid-cols-3 lg:overflow-visible"
-          style={{ scrollSnapType: "x mandatory" }}
-        >
+      {/* Mobile: 1 col · Tablet: 2 cols, last book centered */}
+      <div className="mt-10 grid grid-cols-1 gap-12 md:grid-cols-2 lg:hidden">
+        {books.map((book, index) => (
+          <BookCard
+            key={book.id}
+            book={book}
+            index={index}
+            className={
+              index === books.length - 1
+                ? "md:col-span-2 md:max-w-[360px] md:justify-self-center"
+                : ""
+            }
+          />
+        ))}
+      </div>
+
+      {/* Desktop: 3 + 2 centered */}
+      <div className="mt-14 hidden flex-col gap-16 lg:flex">
+        <div className="grid grid-cols-3 gap-12">
           {ROW_ONE.map((book, index) => (
             <BookCard key={book.id} book={book} index={index} />
           ))}
         </div>
-        <div
-          className="flex gap-12 overflow-x-auto pb-4 scroll-smooth [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:mx-auto lg:w-2/3 lg:grid lg:grid-cols-2 lg:gap-12 lg:overflow-visible"
-          style={{ scrollSnapType: "x mandatory" }}
-        >
+        <div className="mx-auto grid w-2/3 grid-cols-2 gap-12">
           {ROW_TWO.map((book, index) => (
             <BookCard key={book.id} book={book} index={index + 3} />
           ))}

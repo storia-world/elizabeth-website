@@ -42,11 +42,11 @@ function ClientLogo({
 
 function LogoGrid() {
   return (
-    <div className="mx-auto flex w-full max-w-6xl flex-nowrap items-center justify-between gap-2 overflow-x-auto md:gap-2">
+    <div className="mx-auto grid w-full max-w-6xl grid-cols-2 place-items-center gap-x-8 gap-y-10 sm:grid-cols-3 md:flex md:flex-nowrap md:items-center md:justify-between md:gap-2">
       {CLIENT_LOGOS.map((logo) => (
         <div
           key={logo.id}
-          className="flex shrink-0 items-center justify-center"
+          className="flex items-center justify-center md:shrink-0"
         >
           <ClientLogo src={logo.src} alt={logo.alt} height={logo.height} />
         </div>
