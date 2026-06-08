@@ -22,35 +22,35 @@ const books: Book[] = [
     id: 1,
     title: "SLAY IN YOUR LANE",
     description:
-      "The long-awaited, inspirational guide to life for a generation of Black British women inspired to make lemonade out of lemons and find success in every area of life.",
+      "The bestselling book that started as conversations between two best friends and became a cultural touchstone. Slay In Your Lane gave language to the ambition, frustration, and brilliance of Black British women trying to build lives in rooms that weren’t always built for them.",
     cover: book1Cover,
   },
   {
     id: 2,
     title: "THE RESET",
     description:
-      "Ideas to change how we work and live — a curious, refreshing read from society and city down to community, business, culture, and you.",
+      "I came up with the idea for The Reset before the pandemic, after noticing how many people were burnt out by the way we were working and living. The book asks a bigger question: what would it look like to design work around real life, not the other way around? Through interviews with business leaders, politicians, thinkers, The Reset explores how we can rethink cities, community, culture.",
     cover: book2Cover,
   },
   {
     id: 3,
     title: "LOUD BLACK GIRLS",
     description:
-      "Being a loud Black girl isn't about the volume of your voice; and using your voice doesn't always mean speaking the loudest. Most of the time it's simply about showing up.",
+      "A collection of essays celebrating the many ways Black women use their voice through honesty, refusal, softness, joy, ambition, humour and simply taking up space without apology.",
     cover: book5Cover,
   },
   {
     id: 4,
     title: "SLAY IN YOUR LANE: THE JOURNAL",
     description:
-      "The Black Girl Bible in journal form — a space to reflect, plan and slay on your own terms, with prompts and inspiration drawn from the original bestseller.",
+      "The Black Girl Bible became a space to reflect. This journal turns the spirit of Slay In Your Lane into prompts, exercises and reminders for Black women building success on their own terms.",
     cover: book3Cover,
   },
   {
     id: 5,
     title: "THE OFFLINE DIARIES",
     description:
-      "From the authors of Slay in Your Lane — the story of Ade and Shanice, two best friends navigating school, social media and growing up in London.",
+      "A funny, warm and sharply observed fiction book about friendship, school, social media and growing up in London. Through Ade and Shanice, The Offline Diaries explores what it means to find your friends online, offline and everywhere in between.",
     cover: book4Cover,
   },
 ];
@@ -104,7 +104,7 @@ export default function BooksSection() {
       <FadeIn className="text-center">
         <Eyebrow>Books</Eyebrow>
         <h2 className="font-display text-4xl font-light text-[var(--storia-black)] md:text-5xl">
-          Written to inspire
+          Words That Travelled
         </h2>
       </FadeIn>
 
