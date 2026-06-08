@@ -224,24 +224,24 @@ export default function FounderSection() {
           className="min-w-0"
         >
           <Text className="mb-4">
-            A proactive emotional health app helping people turn what they feel
-            into something they can understand, track and grow from. Every day,
-            people carry thousands of emotional signals: stress, ambition,
-            uncertainty, confidence, fear, hope, pressure, desire. Most of it
-            disappears before they can learn from it.
+            I built Storia because I kept meeting people who wanted more from
+            their lives, but didn’t always know what was getting in the way.
           </Text>
           <Text className="mb-4">
-            Storia uses AI to help people capture those signals, spot patterns
-            and turn them into personalised insights. The goal is to create the
-            first standardised system for the mind: a way to measure, understand
-            and strengthen human potential with the same clarity we now bring to
-            sleep, fitness and music.
+            They were ambitious, and trying to grow, but also overwhelmed,
+            burned out, emotionally overloaded and carrying more than they had
+            time to process.
           </Text>
           <Text className="mb-4">
-            Since launch, Storia has captured over 40 million words of
-            self-reflection, been recognised by Apple as App of the Day across
-            45+ countries, and helped thousands of people build a deeper
-            relationship with themselves.
+            Storia helps people turn those feelings into something powerful. It
+            is a proactive emotional health app that uses AI to help people
+            reflect, spot patterns, track their emotional growth and make
+            clearer decisions about their lives.
+          </Text>
+          <Text className="mb-4">
+            Since launch, Storia has processed over 40 million words of
+            self-reflection, helped 45,000+ people, and been recognised by Apple
+            as App of the Day across 45+ countries.
           </Text>
           <div className="mt-8 flex flex-col gap-8">
             {APP_OF_THE_DAY_STORIES.map((story) => (
