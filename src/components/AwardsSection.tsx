@@ -165,9 +165,9 @@ export default function AwardsSection() {
   return (
     <Section id="awards">
       <FadeIn className="text-center">
-        <Eyebrow>Awards & nominations</Eyebrow>
+        <Eyebrow>Awards</Eyebrow>
         <h2 className="font-display text-4xl font-light text-[var(--storia-black)] md:text-5xl">
-          Stories That Earned Recognition
+          Career Milestones
         </h2>
       </FadeIn>
 
