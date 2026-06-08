@@ -120,7 +120,7 @@ export default function PodcastingSection() {
       <FadeIn className="text-center">
         <Eyebrow className="justify-center">Podcasting</Eyebrow>
         <h2 className="font-display text-4xl font-light text-[var(--storia-black)] md:text-5xl">
-          Featured Conversations
+          In conversation
         </h2>
         <Text className="mx-auto mt-5 text-[var(--storia-blackLight)]">
           A few conversations from across my work on identity, ambition,
