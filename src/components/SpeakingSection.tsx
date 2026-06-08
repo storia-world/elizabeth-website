@@ -58,7 +58,7 @@ function SpeakingIntro() {
             perspective, a greater sense of empowerment and action.
           </Text>
           <Text className="mb-4">
-            I&apos;ve worked with a range of companies, including Facebook, Imperial
+            I&apos;ve worked with a range of companies, including Meta, Imperial
             College London, Google, Tortoise, and Spotify.
           </Text>
 
