@@ -54,11 +54,11 @@ const FOUNDER_SLIDES: FounderSlide[] = [
 
 const APP_OF_THE_DAY_STORIES = [
   {
-    title: "Turning what you feel into something you can understand",
+    title: "How a bestselling author built a tool for getting unstuck",
     href: "https://apps.apple.com/gb/story/id1767632768",
   },
   {
-    title: "How Storia became a daily ritual for self-reflection",
+    title: "How Storia became a game-changing AI app",
     href: "https://apps.apple.com/us/story/id1869143479",
   },
 ] as const;
