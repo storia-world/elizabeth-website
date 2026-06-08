@@ -2,7 +2,7 @@
 
 import Image, { StaticImageData } from "next/image";
 
-import { Eyebrow, FadeIn, Section } from "@/components/common";
+import { Eyebrow, FadeIn, Section, Text } from "@/components/common";
 
 import podcast1 from "@/assets/images/podcast1.png";
 import podcast2 from "@/assets/images/podcast2.png";
@@ -120,8 +120,12 @@ export default function PodcastingSection() {
       <FadeIn className="text-center">
         <Eyebrow className="justify-center">Podcasting</Eyebrow>
         <h2 className="font-display text-4xl font-light text-[var(--storia-black)] md:text-5xl">
-          In conversation
+          Featured Conversations
         </h2>
+        <Text className="mx-auto mt-5 text-[var(--storia-blackLight)]">
+          A few conversations from across my work on identity, ambition,
+          creativity and modern life.
+        </Text>
       </FadeIn>
 
       <div className="mt-16 flex flex-col gap-14">
