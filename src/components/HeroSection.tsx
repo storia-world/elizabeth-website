@@ -33,14 +33,14 @@ const HERO_SLIDES: HeroSlide[] = [
   },
   {
     src: storyImg1,
-    alt: "Elizabeth Uviebinené — Peckham",
-    title: "Peckham",
+    alt: "Elizabeth Uviebinené — Early Years",
+    title: "Early Years",
     content: `Raised in Peckham by Nigerian parents, I grew up between cultures, codes and expectations, which shaped my thoughts about indepence, identity and where we find belonging.`,
   },
   {
     src: storyImg2,
-    alt: "Elizabeth Uviebinené — University",
-    title: "University",
+    alt: "Elizabeth Uviebinené — The World Got Bigger",
+    title: "The World Got Bigger",
     content: `Getting into University of Warwick cracked my world open. It was the first time I realised how much bigger life could be — and how important it was to find my own voice inside rooms that weren't always built for people like me.`,
   },
   {
