@@ -9,8 +9,13 @@ import {
   Trophy,
   UserRound,
 } from "lucide-react";
+import Image, { StaticImageData } from "next/image";
 
 import { Eyebrow, FadeIn, Section } from "@/components/common";
+
+import awards1 from "@/assets/images/awards1.jpg";
+import awards2 from "@/assets/images/awards2.jpg";
+import awards3 from "@/assets/images/awards3.jpg";
 
 type Award = {
   title: string;
@@ -51,7 +56,69 @@ const AWARDS: Award[] = [
   },
 ];
 
-function AwardRow({ award, index }: { award: Award; index: number }) {
+type AwardPhoto = {
+  src: StaticImageData;
+  alt: string;
+};
+
+const AWARD_PHOTOS: AwardPhoto[] = [
+  {
+    src: awards3,
+    alt: "Elizabeth Uviebinené at the Black Tech Achievement Awards",
+  },
+  {
+    src: awards2,
+    alt: "Elizabeth Uviebinené at the Black British Business Awards",
+  },
+  {
+    src: awards1,
+    alt: "Elizabeth Uviebinené at the Marie Claire Future Shapers event",
+  },
+];
+
+function AwardsPhotoGrid() {
+  return (
+    <FadeIn
+      direction="left"
+      distance={30}
+      duration={0.7}
+      className="mx-auto w-full max-w-[360px] sm:max-w-[380px]"
+    >
+      <div className="grid grid-cols-2 gap-3">
+        {AWARD_PHOTOS.map((photo, index) => (
+          <div
+            key={photo.alt}
+            className={`relative w-full overflow-hidden rounded-2xl bg-[var(--storia-coffee)] ${
+              index === 2 ? "col-span-2 aspect-[16/10]" : "aspect-[3/4]"
+            }`}
+          >
+            <Image
+              src={photo.src}
+              alt={photo.alt}
+              fill
+              className="object-cover"
+              sizes={
+                index === 2
+                  ? "(max-width: 1023px) 90vw, 380px"
+                  : "(max-width: 1023px) 45vw, 190px"
+              }
+            />
+          </div>
+        ))}
+      </div>
+    </FadeIn>
+  );
+}
+
+function AwardRow({
+  award,
+  index,
+  isLast,
+}: {
+  award: Award;
+  index: number;
+  isLast: boolean;
+}) {
   const Icon = award.icon;
 
   return (
@@ -61,32 +128,34 @@ function AwardRow({ award, index }: { award: Award; index: number }) {
       delay={index * 0.06}
       viewportMargin="-60px"
     >
-      <div className="grid grid-cols-[2.75rem_minmax(0,1fr)] items-center gap-4 border-b border-[rgba(33,37,41,0.08)] py-5 sm:grid-cols-[3.5rem_minmax(0,1fr)] sm:gap-6 sm:py-7">
+      <div
+        className={`grid grid-cols-[2.25rem_minmax(0,1fr)] items-center gap-4 py-5 sm:grid-cols-[2.75rem_minmax(0,1fr)] sm:gap-5 sm:py-6 ${
+          !isLast ? "border-b border-[rgba(33,37,41,0.08)]" : ""
+        }`.trim()}
+      >
         <div className="flex items-center justify-center">
           <Icon
-            size={24}
+            size={22}
             strokeWidth={1.35}
-            className="text-[var(--storia-orange75)] opacity-75 sm:h-7 sm:w-7"
+            className="text-[var(--storia-orange)] sm:h-6 sm:w-6"
             aria-hidden="true"
           />
         </div>
 
-        <div className="min-w-0">
-          <p className="flex flex-col gap-1.5 text-left md:flex-row md:items-center md:gap-4">
-            <span className="font-body text-[0.7rem] font-light leading-[1.15] tracking-[0.01em] text-[var(--storia-black)] sm:text-[1.2rem]">
-              {award.title}
-            </span>
-            <span
-              className="hidden text-[0.9rem] text-[var(--storia-orange75)] md:inline"
-              aria-hidden="true"
-            >
-              &bull;
-            </span>
-            <span className="font-body text-[0.96rem] font-light leading-[1.5] text-[rgba(33,37,41,0.7)] sm:text-[1.05rem]">
-              {award.detail}
-            </span>
-          </p>
-        </div>
+        <p className="min-w-0 text-left font-body text-[0.95rem] leading-[1.45] sm:text-[1rem]">
+          <span className="font-normal text-[var(--storia-black)]">
+            {award.title}
+          </span>
+          <span
+            className="mx-2 text-[var(--storia-orange75)]"
+            aria-hidden="true"
+          >
+            &middot;
+          </span>
+          <span className="font-light text-[var(--storia-blackLight)]">
+            {award.detail}
+          </span>
+        </p>
       </div>
     </FadeIn>
   );
@@ -102,10 +171,23 @@ export default function AwardsSection() {
         </h2>
       </FadeIn>
 
-      <div className="mx-auto mt-12 max-w-[1100px] border-t border-[rgba(33,37,41,0.08)]">
-        {AWARDS.map((award, index) => (
-          <AwardRow key={`${award.title}`} award={award} index={index} />
-        ))}
+      <div className="mt-12 grid grid-cols-1 items-start gap-12 lg:mt-14 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-16 xl:gap-20">
+        <div className="order-2 w-full min-w-0 lg:order-1">
+          <AwardsPhotoGrid />
+        </div>
+
+        <div className="order-1 min-w-0 lg:order-2">
+          <div>
+            {AWARDS.map((award, index) => (
+              <AwardRow
+                key={award.title}
+                award={award}
+                index={index}
+                isLast={index === AWARDS.length - 1}
+              />
+            ))}
+          </div>
+        </div>
       </div>
     </Section>
   );
