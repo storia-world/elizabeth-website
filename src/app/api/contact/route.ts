@@ -1,83 +1,121 @@
 import { NextResponse } from "next/server";
 
-type ContactBody = {
-  firstName?: string;
-  lastName?: string;
-  email?: string;
-  message?: string;
+type ContactPayload = {
+  firstName: string;
+  lastName: string;
+  email: string;
+  message: string;
 };
+
+function readString(v: unknown): string {
+  return typeof v === "string" ? v.trim() : "";
+}
 
 function isValidEmail(value: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 }
 
 export async function POST(request: Request) {
-  const webhookUrl = process.env.GOOGLE_SHEETS_WEBHOOK_URL;
+  const scriptUrl = process.env.APPS_SCRIPT_WEBAPP_URL;
+  const secret = process.env.FORM_SUBMIT_SECRET;
 
-  if (!webhookUrl) {
+  if (!scriptUrl?.trim() || !secret?.trim()) {
     return NextResponse.json(
-      { error: "Contact form is not configured." },
+      { ok: false, error: "Contact endpoint is not configured." },
       { status: 503 },
     );
   }
 
-  let body: ContactBody;
+  let json: unknown;
   try {
-    body = await request.json();
+    json = await request.json();
   } catch {
-    return NextResponse.json({ error: "Invalid request." }, { status: 400 });
-  }
-
-  const firstName = body.firstName?.trim() ?? "";
-  const lastName = body.lastName?.trim() ?? "";
-  const email = body.email?.trim() ?? "";
-  const message = body.message?.trim() ?? "";
-
-  if (!firstName || !lastName || !email || !message) {
     return NextResponse.json(
-      { error: "Please fill in all fields." },
+      { ok: false, error: "Expected JSON body." },
       { status: 400 },
     );
   }
 
-  if (!isValidEmail(email)) {
+  if (!json || typeof json !== "object") {
     return NextResponse.json(
-      { error: "Please enter a valid email address." },
+      { ok: false, error: "Invalid JSON body." },
+      { status: 400 },
+    );
+  }
+
+  const body = json as Record<string, unknown>;
+  const payload: ContactPayload = {
+    firstName: readString(body.firstName),
+    lastName: readString(body.lastName),
+    email: readString(body.email),
+    message: readString(body.message),
+  };
+
+  if (
+    !payload.firstName ||
+    !payload.lastName ||
+    !payload.email ||
+    !payload.message
+  ) {
+    return NextResponse.json(
+      { ok: false, error: "Please fill in all fields." },
+      { status: 400 },
+    );
+  }
+
+  if (!isValidEmail(payload.email)) {
+    return NextResponse.json(
+      { ok: false, error: "Please enter a valid email address." },
       { status: 400 },
     );
   }
 
   try {
-    const sheetResponse = await fetch(webhookUrl, {
+    const upstream = await fetch(scriptUrl, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      redirect: "follow",
-      body: JSON.stringify({ firstName, lastName, email, message }),
+      body: JSON.stringify({ ...payload, secret }),
     });
 
-    const responseText = await sheetResponse.text();
-    let parsed: { success?: boolean } = {};
+    const raw = await upstream.text();
 
-    try {
-      parsed = JSON.parse(responseText) as { success?: boolean };
-    } catch {
-      // Apps Script may return non-JSON; treat HTTP ok as success
-    }
-
-    if (!sheetResponse.ok || parsed.success === false) {
-      console.error("Google Sheets webhook failed:", responseText);
+    if (!upstream.ok) {
+      console.error("Google Sheets webhook failed:", raw);
       return NextResponse.json(
-        { error: "Failed to send message. Please try again." },
-        { status: 500 },
+        {
+          ok: false,
+          error: "Could not save your request. Please try again or email us.",
+        },
+        { status: 502 },
       );
     }
 
-    return NextResponse.json({ success: true });
+    let parsed: { ok?: boolean; error?: string } | null = null;
+    try {
+      parsed = JSON.parse(raw) as { ok?: boolean; error?: string };
+    } catch {
+      // Apps Script may return non-JSON on some failures
+    }
+
+    if (parsed && parsed.ok === false) {
+      return NextResponse.json(
+        {
+          ok: false,
+          error: parsed.error || "Request rejected.",
+        },
+        { status: upstream.status >= 400 ? upstream.status : 400 },
+      );
+    }
+
+    return NextResponse.json({ ok: true });
   } catch (error) {
     console.error("Contact form error:", error);
     return NextResponse.json(
-      { error: "Failed to send message. Please try again." },
-      { status: 500 },
+      {
+        ok: false,
+        error: "Could not save your request. Please try again or email us.",
+      },
+      { status: 502 },
     );
   }
 }
