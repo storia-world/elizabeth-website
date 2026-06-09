@@ -45,15 +45,16 @@ const HERO_SLIDES: HeroSlide[] = [
   },
   {
     src: storyImg3,
-    alt: "Elizabeth Uviebinené — Corporate Years",
-    title: "Corporate Years",
-    content: `My first step into the corporate world was both exciting and disorientating. I learned how power works, how confidence is performed, and how many people are quietly trying to figure life out behind polished LinkedIn profiles and office titles.`,
+    alt: "Elizabeth Uviebinené — Learning the Hidden Rules of Work",
+    title: "Learning the Hidden Rules of Work",
+    content: `I began my career in the corporate world, where I learned very quickly that work is never just work. It is ambition, performance, confidence, identity and the hidden curriculum no one hands you, but everyone expects you to understand. Those early years taught me that careers are not only built through talent, but through navigation: learning how rooms work, how power moves, how influence is built, and what it takes to build a career without losing yourself.`,
   },
   {
     src: storyImg4,
-    alt: "Elizabeth Uviebinené — Becoming an Author",
-    title: "Becoming an Author",
-    content: `I co-authored Slay in Your Lane with my best friend and watched it grow into something far bigger than either of us imagined. What started as conversations between two women became a cultural conversation about ambition, race, identity and belonging.`,
+    alt: "Elizabeth Uviebinené — The Book That Changed Everything",
+    title: "The Book That Changed Everything",
+    content: `I co-authored the bestselling book Slay In Your Lane with my best friend, Yomi Adegoke, and watched it grow far beyond anything either of us imagined. What started as a conversation between us became a cultural landmark about identity and belonging.\n
+The book was shortlisted for both the British Book Awards and the National Book Awards, and helped establish me as one of the leading voices on Black British womanhood. Its influence grew into a companion journal, the Loud Black Girls anthology, and the children’s book The Offline Diaries. I was also named one of the most influential people in London by the Evening Standard.`,
   },
   {
     src: storyImg5,
@@ -98,7 +99,7 @@ type HeroCarouselProps = {
 function HeroSlideCopy({ slide }: { slide: HeroSlide }) {
   return (
     <>
-      <h2 className="font-display text-[1.8rem] font-semibold leading-[1.04] text-[var(--storia-black)] sm:text-[2.2rem] lg:text-[3rem]">
+      <h2 className="font-display text-[1.6rem] font-semibold leading-[1.04] text-[var(--storia-black)] sm:text-[2rem] lg:text-[2.8rem]">
         {slide.title ?? "Hi, I'm Elizabeth."}
       </h2>
 
@@ -106,10 +107,21 @@ function HeroSlideCopy({ slide }: { slide: HeroSlide }) {
 
       <Text
         size="large"
-        className="mt-8 max-w-[42rem] whitespace-pre-line text-[1.04rem] leading-[1.9] text-[var(--storia-blackLight)] sm:text-[1.10rem]"
+        className="mt-8 max-w-[42rem] whitespace-pre-line text-[1.0rem] leading-[1.9] text-[var(--storia-blackLight)] sm:text-[1.06rem]"
       >
         {slide.content}
       </Text>
+    </>
+  );
+}
+
+function HeroSlideBlock({ slide }: { slide: HeroSlide }) {
+  return (
+    <>
+      <Eyebrow className="mb-5 text-[0.82rem] tracking-[0.28em] text-[var(--storia-orange)]">
+        About Me
+      </Eyebrow>
+      <HeroSlideCopy slide={slide} />
     </>
   );
 }
@@ -124,7 +136,7 @@ function HeroCarousel({
   transitionDirection,
 }: HeroCarouselProps) {
   return (
-    <div className="relative mx-auto w-full max-w-[min(100%,420px)] md:-translate-y-4">
+    <div className="relative mx-auto w-full max-w-[min(100%,420px)]">
       <div
         className="relative mx-auto w-full max-w-[min(100%,410px)]"
         style={{
@@ -258,7 +270,7 @@ export default function HeroSection() {
       className="flex min-h-screen items-center px-[8vw] pb-[120px] pt-28 md:pt-32"
       style={{ background: "var(--storia-beige)" }}
     >
-      <div className="mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-14 md:grid-cols-[minmax(0,460px)_minmax(0,1fr)] md:gap-16 lg:gap-20">
+      <div className="mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-14 md:grid-cols-[minmax(0,460px)_minmax(0,1fr)] md:items-stretch md:gap-16 lg:gap-20">
         <HeroCarousel
           activeSlide={activeSlide}
           onPrev={scrollPrev}
@@ -269,14 +281,10 @@ export default function HeroSection() {
           transitionDirection={transitionDirection}
         />
 
-        <div className="relative min-w-0 max-w-[560px]">
-          <Eyebrow className="mb-5 text-[0.82rem] tracking-[0.28em] text-[var(--storia-orange)]">
-            About Me
-          </Eyebrow>
-
+        <div className="relative flex h-full min-w-0 w-full max-w-[560px] self-stretch items-center">
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-x-0 top-[calc(0.82rem+1.25rem)] -z-10 opacity-0"
+            className="pointer-events-none absolute inset-x-0 top-0 -z-10 opacity-0"
           >
             {HERO_SLIDES.map((slide, index) => (
               <div
@@ -285,12 +293,15 @@ export default function HeroSection() {
                   copyMeasureRefs.current[index] = node;
                 }}
               >
-                <HeroSlideCopy slide={slide} />
+                <HeroSlideBlock slide={slide} />
               </div>
             ))}
           </div>
 
-          <div style={{ minHeight: copyMinHeight || undefined }}>
+          <div
+            className="flex w-full flex-col justify-center"
+            style={{ minHeight: copyMinHeight || undefined }}
+          >
             <AnimatePresence mode="wait">
               <motion.div
                 key={selectedIndex}
@@ -299,7 +310,7 @@ export default function HeroSection() {
                 exit={{ opacity: 0, y: -12 }}
                 transition={{ duration: 0.35, ease: "easeOut" }}
               >
-                <HeroSlideCopy slide={activeSlide} />
+                <HeroSlideBlock slide={activeSlide} />
               </motion.div>
             </AnimatePresence>
           </div>

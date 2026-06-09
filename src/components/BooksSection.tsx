@@ -29,7 +29,7 @@ const books: Book[] = [
     id: 2,
     title: "THE RESET",
     description:
-      "I came up with the idea for The Reset before the pandemic, after noticing how many people were burnt out by the way we were working and living. The book asks a bigger question: what would it look like to design work around real life, not the other way around? Through interviews with business leaders, politicians, thinkers, The Reset explores how we can rethink cities, community, culture.",
+      "I came up with The Reset before the pandemic, after noticing how burnt out people were by the way we work and live. The book asks a bigger question: what would it look like to design work around real life, rather than forcing life to bend around work? Through interviews with business leaders, politicians and thinkers, The Reset explores how to build a future that doesn’t ask people to shrink themselves to survive.",
     cover: book2Cover,
   },
   {
