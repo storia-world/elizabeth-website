@@ -93,7 +93,9 @@ export async function POST(request: Request) {
     let parsed: { ok?: boolean; error?: string } | null = null;
     try {
       parsed = JSON.parse(raw) as { ok?: boolean; error?: string };
-    } catch {}
+    } catch {
+      // Apps Script may return non-JSON on some failures
+    }
 
     if (parsed && parsed.ok === false) {
       return NextResponse.json(
