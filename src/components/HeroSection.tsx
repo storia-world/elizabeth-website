@@ -28,11 +28,7 @@ const HERO_SLIDES: HeroSlide[] = [
   {
     src: founderPortrait,
     alt: "Elizabeth Uviebinené — Today",
-    content: `I’m a founder, author and storyteller driven by curiosity and creativity.
-
-Over the last decade, my work has spanned books, columns, speaking, and technology. Different formats, same instinct: spotting the cultural tensions people are living through, then turning those observations into language, stories and products that help people move through life with more clarity.
-
-I’m interested in the parts of modern life that rarely make it into the official story: the contradictions, reinventions, turning points, and invisible negotiations that shape who we become.`,
+    content: `I’m a founder, author and storyteller driven by curiosity and creativity.\n\nOver the last decade, my work has spanned books, columns, speaking, and technology. Different formats, same instinct: spotting the cultural tensions people are living through, then turning those observations into language, stories and products that help people move through life with more clarity.\n\nI’m interested in the parts of modern life that rarely make it into the official story: the contradictions, reinventions, turning points, and invisible negotiations that shape who we become.`,
   },
   {
     src: storyImg1,
@@ -56,33 +52,31 @@ I’m interested in the parts of modern life that rarely make it into the offici
     src: storyImg4,
     alt: "Elizabeth Uviebinené — The Book That Changed Everything",
     title: "The Book That Changed Everything",
-    content: `I co-authored the bestselling book Slay In Your Lane with my best friend, Yomi Adegoke, and watched it grow far beyond anything either of us imagined. What started as a conversation between us became a cultural landmark about identity and belonging.\n
-The book was shortlisted for both the British Book Awards and the National Book Awards, and helped establish me as one of the leading voices on Black British womanhood. Its influence grew into a companion journal, the Loud Black Girls anthology, and the children’s book The Offline Diaries. I was also named one of the most influential people in London by the Evening Standard.`,
+    content: `I co-authored the bestselling book Slay In Your Lane with my best friend, Yomi Adegoke, and watched it grow far beyond anything either of us imagined. What started as a conversation between us became a cultural landmark about identity and belonging.\n\nThe book was shortlisted for both the British Book Awards and the National Book Awards, and helped establish me as one of the leading voices on Black British womanhood. Its influence grew into a companion journal, the Loud Black Girls anthology, and the children’s book The Offline Diaries. I was also named one of the most influential people in London by the Evening Standard.`,
   },
   {
     src: storyImg5,
-    alt: "Elizabeth Uviebinené — Financial Times Columnist",
-    title: "Financial Times Columnist",
-    content: `Becoming a columnist at the Financial Times taught me the power of giving people language for things they feel but struggle to explain. I wrote about work, ambition, culture and the messy reality of modern life in a rapidly changing world.`,
+    alt: "Elizabeth Uviebinené — A Wider Lens",
+    title: "A Wider Lens",
+    content: `Writing a column for the Financial Times gave me a rare kind of space: a place to think publicly, consistently and at scale.\n\nFor four years, I wrote about the people changing how we work, live and build — from founders and creatives to cultural thinkers and new forms of leadership. It sharpened my ability to spot patterns early, take what was happening in everyday life and connect it to bigger shifts in business, culture and society.\n\nAs one of the few Black women with that kind of platform, I understood the responsibility and power of bringing a perspective, curiosity and cultural fluency that was still too rare in those pages.`,
   },
   {
     src: storyImg6,
     alt: "Elizabeth Uviebinené — The Reset",
     title: "The Reset",
-    content: `Writing The Reset came from noticing how many people looked successful on paper but quietly felt exhausted, stuck or disconnected underneath it all. The book explored what happens when the scripts we inherited stop working — and how we rebuild from there.`,
+    content: `I came up with The Reset before the pandemic, after noticing how burnt out people were by the way we work and live.\n\nThe book asks a bigger question: what would it look like to design work around real life, rather than forcing life to bend around work?\nThrough interviews with business leaders, politicians and thinkers, The Reset explores how to build a future that doesn’t ask people to shrink themselves to survive.`,
   },
   {
     src: storyImg7,
-    alt: "Elizabeth Uviebinené — Building Storia",
-    title: "Building Storia",
-    content: `Then came Storia. What began as an idea in my Notes app became an AI-powered self-reflection app that helps people turn emotional noise into clarity, spot the patterns shaping their lives, and move through change with more self-trust.`,
+    alt: "Elizabeth Uviebinené — The Product I Wish Existed",
+    title: "The Product I Wish Existed",
+    content: `Storia came from noticing a behaviour and problem hiding in plain sight. People were already using the Notes app, voice notes and group chats to process what they were feeling, navigating and outgrowing, but there was no beautiful, intelligent product built for that everyday need: trying to understand yourself in real time.\n\nSo I built one. Today, Storia has helped more than 45,000 people, with over 40 million words journaled, and has become one of Apple’s most featured self-reflection apps.`,
   },
   {
     src: storyImg8,
     alt: "Elizabeth Uviebinené — Today",
     title: "Today",
-    content: `From books to brands to building products people love, I’m interested in one thing: helping people better understand who they are and who they’re becoming.
-\nMy work is about giving people language for the lives they’re living and tools for the futures they’re trying to build.`,
+    content: `From books to brands to building products people love, I’m interested in one thing: helping people better understand who they are and who they’re becoming.\n\nMy work is about giving people language for the lives they’re living and tools for the futures they’re trying to build.`,
   },
 ];
 
