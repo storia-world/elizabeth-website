@@ -62,8 +62,8 @@ const HERO_SLIDES: HeroSlide[] = [
   },
   {
     src: storyImg6,
-    alt: "Elizabeth Uviebinené — The Reset",
-    title: "The Reset",
+    alt: "Elizabeth Uviebinené — When the Script Stopped Working",
+    title: "When the Script Stopped Working",
     content: `I came up with The Reset before the pandemic, after noticing how burnt out people were by the way we work and live.\n\nThe book asks a bigger question: what would it look like to design work around real life, rather than forcing life to bend around work?\nThrough interviews with business leaders, politicians and thinkers, The Reset explores how to build a future that doesn’t ask people to shrink themselves to survive.`,
   },
   {
