@@ -28,8 +28,11 @@ const HERO_SLIDES: HeroSlide[] = [
   {
     src: founderPortrait,
     alt: "Elizabeth Uviebinené — Today",
-    content: `I’m a founder, author and storyteller driven by curiosity about how people build identity, navigate change and make sense of modern life. 
-    \nOver the last decade, my work has spanned books, columns, speaking and technology, but the thread connecting all of it has always been human behaviour: what we feel, what we hide, what we want, and who we become.`,
+    content: `I’m a founder, author and storyteller driven by curiosity and creativity.
+
+Over the last decade, my work has spanned books, columns, speaking, and technology. Different formats, same instinct: spotting the cultural tensions people are living through, then turning those observations into language, stories and products that help people move through life with more clarity.
+
+I’m interested in the parts of modern life that rarely make it into the official story: the contradictions, reinventions, turning points, and invisible negotiations that shape who we become.`,
   },
   {
     src: storyImg1,
