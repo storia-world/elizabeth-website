@@ -38,7 +38,7 @@ I’m interested in the parts of modern life that rarely make it into the offici
     src: storyImg1,
     alt: "Elizabeth Uviebinené — Early Years",
     title: "Early Years",
-    content: `Raised in Peckham by Nigerian parents, I grew up between cultures, codes and expectations, which shaped my thoughts about indepence, identity and where we find belonging.`,
+    content: `Raised in Peckham by Nigerian parents, I grew up between cultures, codes and expectations. I learned early on that people are rarely one thing. You could grow up surrounded by noise and tenderness, pressure and creativity, ambition and uncertainty, all of it sitting side by side. You learned how to read rooms, move between cultures, understand codes, and still work out who you wanted to be.`,
   },
   {
     src: storyImg2,
