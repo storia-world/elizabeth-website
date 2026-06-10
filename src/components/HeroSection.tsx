@@ -49,7 +49,8 @@ const HERO_SLIDES: HeroSlide[] = [
     alt: "Elizabeth Uviebinené — The World Got Bigger",
     title: "The World Got Bigger",
     content: [
-      "Getting into University of Warwick cracked my world open. It was the first time I realised how much bigger life could be — and how important it was to find my own voice inside rooms that weren't always built for people like me.",
+      "Getting into the University of Warwick cracked my world open. I studied Politics and International Relations, a subject that gave language to something I had always been curious about: power.",
+      "Warwick gave me friendships that would go on to change my life: sisterhood, late-night conversations, kitchen-table debates, questionable student nights out, and people who made it feel like a home from home!",
     ],
   },
   {
