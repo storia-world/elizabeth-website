@@ -41,7 +41,7 @@ const HERO_SLIDES: HeroSlide[] = [
     content: [
       "I always joke that I was born in Lagos, Nigeria, then moved to mini Lagos: Peckham.",
       "There’s a deep-rooted belief in possibility that comes with being Nigerian. Ambition is expected; it’s not a question of if, but how far you’ll go. From early on, I had a strong sense that you come from something: that your name carries stories, expectations and history.",
-      "Growing up in Peckham added another layer. It was vibrant, creative and chaotic, and it taught me resilience, resourcefulness and how to hold my own. I grew up between cultures, codes and expectations, learning that people are rarely one thing. You could be surrounded by noise and tenderness, pressure and creativity, ambition and uncertainty, all of it sitting side by side. That shaped how I move through life now: understanding different worlds, even when the blueprint isn’t clear.",
+      "Peckham added another layer. It was vibrant, creative and chaotic, and taught me resilience, resourcefulness and how to hold my own. I grew up between cultures, codes and expectations, learning that people are rarely one thing. Noise and tenderness, pressure and creativity, ambition and uncertainty all sat side by side. That shaped how I move through life now: understanding different worlds, even when the blueprint isn’t clear.",
     ],
   },
   {
