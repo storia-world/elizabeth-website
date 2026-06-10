@@ -123,8 +123,8 @@ export default function PodcastingSection() {
           In conversation
         </h2>
         <Text className="mx-auto mt-5 text-[var(--storia-blackLight)]">
-          A few conversations from across my work on identity, ambition,
-          creativity and modern life.
+          A few conversations from across my work, helping people build the
+          mindset and confidence for the futures they’re trying to create.
         </Text>
       </FadeIn>
 
