@@ -1,6 +1,12 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import {
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+  type ReactNode,
+} from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image, { StaticImageData } from "next/image";
@@ -21,7 +27,7 @@ type HeroSlide = {
   src: StaticImageData;
   alt: string;
   title?: string;
-  content: string[];
+  content: ReactNode[];
 };
 
 const HERO_SLIDES: HeroSlide[] = [
@@ -29,8 +35,23 @@ const HERO_SLIDES: HeroSlide[] = [
     src: founderPortrait,
     alt: "Elizabeth Uviebinené — Today",
     content: [
-      "I’m a founder, author and storyteller driven by curiosity and creativity.",
-      "Over the last decade, my work has spanned books, columns, speaking, and technology. Different formats, same instinct: spotting the cultural tensions people are living through, then turning those observations into language, stories and products that help people move through life with more clarity.",
+      <>
+        I&apos;m a founder, author and storyteller driven by{" "}
+        <span className="font-semibold text-[var(--storia-blackLight)]">
+          curiosity and creativity
+        </span>
+        .
+      </>,
+      <>
+        Over the last decade, my work has spanned books, columns, speaking, and
+        technology. Different formats, same instinct: spotting the cultural
+        tensions people are living through, then turning those observations into
+        language, stories and products that{" "}
+        <span className="font-semibold text-[var(--storia-blackLight)]">
+          help people move through life with more self-trust and confidence
+        </span>
+        .
+      </>,
       "I’m interested in the parts of modern life that rarely make it into the official story: the contradictions, reinventions, turning points, and invisible negotiations that shape who we become.",
     ],
   },
