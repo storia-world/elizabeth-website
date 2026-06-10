@@ -83,11 +83,11 @@ const HERO_SLIDES: HeroSlide[] = [
       "Getting into the University of Warwick cracked my world open. I studied Politics and International Relations, a subject that gave language to something I had always been curious about: power.",
       <>
         <span className="font-semibold text-[var(--storia-blackLight)]">
-          Warwick gave me friendships that would go on to change my life
-        </span>
-        : sisterhood, late-night conversations, kitchen-table debates,
-        questionable student nights out, and people who made it feel like a home
-        from home!
+          Warwick gave me friendships
+        </span>{" "}
+        that would go on to change my life: sisterhood, late-night conversations,
+        kitchen-table debates, questionable student nights out, and people who
+        made it feel like a home from home!
       </>,
     ],
   },
@@ -191,11 +191,9 @@ const HERO_SLIDES: HeroSlide[] = [
     title: "The Product I Wish Existed",
     content: [
       <>
-        Storia came from noticing a behaviour and{" "}
-        <span className="font-semibold text-[var(--storia-blackLight)]">
-          problem hiding in plain sight
-        </span>
-        . People were already using the Notes app, voice notes and group chats
+        Storia came from noticing a behaviour and problem hiding in plain
+        sight. People were already using the Notes app, voice notes and group
+        chats
         to process what they were feeling, navigating and outgrowing, but there
         was no{" "}
         <span className="font-semibold text-[var(--storia-blackLight)]">
