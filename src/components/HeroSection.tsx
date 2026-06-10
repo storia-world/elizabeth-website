@@ -26,7 +26,7 @@ import storyImg8 from "@/assets/images/storyImg8.png";
 type HeroSlide = {
   src: StaticImageData;
   alt: string;
-  title?: string;
+  title?: ReactNode;
   content: ReactNode[];
 };
 
@@ -36,7 +36,8 @@ const HERO_SLIDES: HeroSlide[] = [
     alt: "Elizabeth Uviebinené — Today",
     content: [
       <>
-        I&apos;m a founder, author and storyteller driven by{" "}
+        I&apos;m an award-winning founder, bestselling author and storyteller
+        driven by{" "}
         <span className="font-semibold text-[var(--storia-blackLight)]">
           curiosity and creativity
         </span>
@@ -61,8 +62,8 @@ const HERO_SLIDES: HeroSlide[] = [
     title: "Early Years",
     content: [
       "I always joke that I was born in Lagos, Nigeria, then moved to mini Lagos: Peckham.",
-      "There’s a deep-rooted belief in possibility that comes with being Nigerian. Ambition is expected; it’s not a question of if, but how far you’ll go. From early on, I had a strong sense that you come from something: that your name carries stories, expectations and history.",
-      "Peckham added another layer. It was vibrant, creative and chaotic, and taught me resilience, resourcefulness and how to hold my own. I grew up between cultures, codes and expectations, learning that people are rarely one thing. Noise and tenderness, pressure and creativity, ambition and uncertainty all sat side by side. That shaped how I move through life now: understanding different worlds, even when the blueprint isn’t clear.",
+      "Being Nigerian gave me a deep-rooted belief in possibility. Ambition was expected; it was never a question of if, but how far you would go. From early on, I understood that you come from something: your name carries stories, expectations and history.",
+      "Peckham added another layer. Vibrant, creative and chaotic, it taught me resilience and resourcefulness. Growing up between cultures, codes and expectations showed me that people are rarely one thing. Noise and tenderness, pressure and creativity, all sat side by side.",
     ],
   },
   {
@@ -70,14 +71,27 @@ const HERO_SLIDES: HeroSlide[] = [
     alt: "Elizabeth Uviebinené — The World Got Bigger",
     title: "The World Got Bigger",
     content: [
-      "Getting into the University of Warwick cracked my world open. I studied Politics and International Relations, a subject that gave language to something I had always been curious about: power.",
+      <>
+        Getting into the University of Warwick cracked my world open. I studied
+        Politics and International Relations, a subject that gave language to
+        something{" "}
+        <span className="font-semibold text-[var(--storia-blackLight)]">
+          I had always been curious about: power.
+        </span>
+      </>,
       "Warwick gave me friendships that would go on to change my life: sisterhood, late-night conversations, kitchen-table debates, questionable student nights out, and people who made it feel like a home from home!",
     ],
   },
   {
     src: storyImg3,
     alt: "Elizabeth Uviebinené — Learning the Hidden Rules of Work",
-    title: "Learning the Hidden Rules of Work",
+    title: (
+      <>
+        Learning the Hidden Rules
+        <br />
+        of Work
+      </>
+    ),
     content: [
       "I began my career in the corporate world, where I learned very quickly that work is never just work. It is ambition, performance, confidence, identity and the hidden curriculum no one hands you, but everyone expects you to understand. Those early years taught me that careers are not only built through talent, but through navigation: learning how rooms work, how power moves, how influence is built, and what it takes to build a career without losing yourself.",
     ],
