@@ -201,7 +201,8 @@ const HERO_SLIDES: HeroSlide[] = [
         <span className="font-semibold text-[var(--storia-blackLight)]">
           beautiful, intelligent product
         </span>{" "}
-        built for that everyday need: trying to understand yourself in real time.
+        built for that everyday need: trying to understand yourself in real
+        time.
       </>,
       <>
         So I built one. Today, Storia has helped more than{" "}
@@ -212,15 +213,15 @@ const HERO_SLIDES: HeroSlide[] = [
       </>,
     ],
   },
-  {
-    src: storyImg8,
-    alt: "Elizabeth Uviebinené — Today",
-    title: "Today",
-    content: [
-      "From books to brands to building products people love, I’m interested in one thing: helping people better understand who they are and who they’re becoming.",
-      "My work is about giving people language for the lives they’re living and tools for the futures they’re trying to build.",
-    ],
-  },
+  // {
+  //   src: storyImg8,
+  //   alt: "Elizabeth Uviebinené — Today",
+  //   title: "Today",
+  //   content: [
+  //     "From books to brands to building products people love, I’m interested in one thing: helping people better understand who they are and who they’re becoming.",
+  //     "My work is about giving people language for the lives they’re living and tools for the futures they’re trying to build.",
+  //   ],
+  // },
 ];
 
 const HERO_FRAME_INNER_IMAGE_CLASS =
