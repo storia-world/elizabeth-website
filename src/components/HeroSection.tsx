@@ -21,62 +21,91 @@ type HeroSlide = {
   src: StaticImageData;
   alt: string;
   title?: string;
-  content: string;
+  content: string[];
 };
 
 const HERO_SLIDES: HeroSlide[] = [
   {
     src: founderPortrait,
     alt: "Elizabeth Uviebinené — Today",
-    content: `I’m a founder, author and storyteller driven by curiosity and creativity.\n\nOver the last decade, my work has spanned books, columns, speaking, and technology. Different formats, same instinct: spotting the cultural tensions people are living through, then turning those observations into language, stories and products that help people move through life with more clarity.\n\nI’m interested in the parts of modern life that rarely make it into the official story: the contradictions, reinventions, turning points, and invisible negotiations that shape who we become.`,
+    content: [
+      "I’m a founder, author and storyteller driven by curiosity and creativity.",
+      "Over the last decade, my work has spanned books, columns, speaking, and technology. Different formats, same instinct: spotting the cultural tensions people are living through, then turning those observations into language, stories and products that help people move through life with more clarity.",
+      "I’m interested in the parts of modern life that rarely make it into the official story: the contradictions, reinventions, turning points, and invisible negotiations that shape who we become.",
+    ],
   },
   {
     src: storyImg1,
     alt: "Elizabeth Uviebinené — Early Years",
     title: "Early Years",
-    content: `Raised in Peckham by Nigerian parents, I grew up between cultures, codes and expectations. I learned early on that people are rarely one thing. You could grow up surrounded by noise and tenderness, pressure and creativity, ambition and uncertainty, all of it sitting side by side. You learned how to read rooms, move between cultures, understand codes, and still work out who you wanted to be.`,
+    content: [
+      "I always joke that I was born in Lagos, Nigeria, then moved to mini Lagos: Peckham.",
+      "There’s a deep-rooted belief in possibility that comes with being Nigerian. Ambition is expected; it’s not a question of if, but how far you’ll go. From early on, I had a strong sense that you come from something: that your name carries stories, expectations and history.",
+      "Growing up in Peckham added another layer. It was vibrant, creative and chaotic, and it taught me resilience, resourcefulness and how to hold my own. I grew up between cultures, codes and expectations, learning that people are rarely one thing. You could be surrounded by noise and tenderness, pressure and creativity, ambition and uncertainty, all of it sitting side by side. That shaped how I move through life now: understanding different worlds, even when the blueprint isn’t clear.",
+    ],
   },
   {
     src: storyImg2,
     alt: "Elizabeth Uviebinené — The World Got Bigger",
     title: "The World Got Bigger",
-    content: `Getting into University of Warwick cracked my world open. It was the first time I realised how much bigger life could be — and how important it was to find my own voice inside rooms that weren't always built for people like me.`,
+    content: [
+      "Getting into University of Warwick cracked my world open. It was the first time I realised how much bigger life could be — and how important it was to find my own voice inside rooms that weren't always built for people like me.",
+    ],
   },
   {
     src: storyImg3,
     alt: "Elizabeth Uviebinené — Learning the Hidden Rules of Work",
     title: "Learning the Hidden Rules of Work",
-    content: `I began my career in the corporate world, where I learned very quickly that work is never just work. It is ambition, performance, confidence, identity and the hidden curriculum no one hands you, but everyone expects you to understand. Those early years taught me that careers are not only built through talent, but through navigation: learning how rooms work, how power moves, how influence is built, and what it takes to build a career without losing yourself.`,
+    content: [
+      "I began my career in the corporate world, where I learned very quickly that work is never just work. It is ambition, performance, confidence, identity and the hidden curriculum no one hands you, but everyone expects you to understand. Those early years taught me that careers are not only built through talent, but through navigation: learning how rooms work, how power moves, how influence is built, and what it takes to build a career without losing yourself.",
+    ],
   },
   {
     src: storyImg4,
     alt: "Elizabeth Uviebinené — The Book That Changed Everything",
     title: "The Book That Changed Everything",
-    content: `I co-authored the bestselling book Slay In Your Lane with my best friend, Yomi Adegoke, and watched it grow far beyond anything either of us imagined. What started as a conversation between us became a cultural landmark about identity and belonging.\n\nThe book was shortlisted for both the British Book Awards and the National Book Awards, and helped establish me as one of the leading voices on Black British womanhood. Its influence grew into a companion journal, the Loud Black Girls anthology, and the children’s book The Offline Diaries. I was also named one of the most influential people in London by the Evening Standard.`,
+    content: [
+      "I co-authored the bestselling book Slay In Your Lane with my best friend, Yomi Adegoke, and watched it grow far beyond anything either of us imagined. What started as a conversation between us became a cultural landmark about identity and belonging.",
+      "The book was shortlisted for both the British Book Awards and the National Book Awards, and helped establish me as one of the leading voices on Black British womanhood. Its influence grew into a companion journal, the Loud Black Girls anthology, and the children’s book The Offline Diaries. I was also named one of the most influential people in London by the Evening Standard.",
+    ],
   },
   {
     src: storyImg5,
     alt: "Elizabeth Uviebinené — A Wider Lens",
     title: "A Wider Lens",
-    content: `Writing a column for the Financial Times gave me a rare kind of space: a place to think publicly, consistently and at scale.\n\nFor four years, I wrote about the people changing how we work, live and build — from founders and creatives to cultural thinkers and new forms of leadership. It sharpened my ability to spot patterns early, take what was happening in everyday life and connect it to bigger shifts in business, culture and society.\n\nAs one of the few Black women with that kind of platform, I understood the responsibility and power of bringing a perspective, curiosity and cultural fluency that was still too rare in those pages.`,
+    content: [
+      "Writing a column for the Financial Times gave me a rare kind of space: a place to think publicly, consistently and at scale.",
+      "For four years, I wrote about the people changing how we work, live and build — from founders and creatives to cultural thinkers and new forms of leadership. It sharpened my ability to spot patterns early, take what was happening in everyday life and connect it to bigger shifts in business, culture and society.",
+      "As one of the few Black women with that kind of platform, I understood the responsibility and power of bringing a perspective, curiosity and cultural fluency that was still too rare in those pages.",
+    ],
   },
   {
     src: storyImg6,
     alt: "Elizabeth Uviebinené — When the Script Stopped Working",
     title: "When the Script Stopped Working",
-    content: `I had the idea for The Reset before Covid, after noticing how many people were starting to question the lives they had worked so hard to build.\n\nThey had followed the path, built a career, ticked the boxes and still felt a quiet disconnect between the life that looked good on paper and the one they actually wanted to live. Then the pandemic arrived, and that private reckoning became collective.\n\nThe book opened up a broader conversation with organisations about the future of work, and what top talent needs from the places where they give their time, energy and ideas.`,
+    content: [
+      "I had the idea for The Reset before Covid, after noticing how many people were starting to question the lives they had worked so hard to build.",
+      "They had followed the path, built a career, ticked the boxes and still felt a quiet disconnect between the life that looked good on paper and the one they actually wanted to live. Then the pandemic arrived, and that private reckoning became collective.",
+      "The book opened up a broader conversation with organisations about the future of work, and what top talent needs from the places where they give their time, energy and ideas.",
+    ],
   },
   {
     src: storyImg7,
     alt: "Elizabeth Uviebinené — The Product I Wish Existed",
     title: "The Product I Wish Existed",
-    content: `Storia came from noticing a behaviour and problem hiding in plain sight. People were already using the Notes app, voice notes and group chats to process what they were feeling, navigating and outgrowing, but there was no beautiful, intelligent product built for that everyday need: trying to understand yourself in real time.\n\nSo I built one. Today, Storia has helped more than 45,000 people, with over 40 million words journaled, and has become one of Apple’s most featured self-reflection apps.`,
+    content: [
+      "Storia came from noticing a behaviour and problem hiding in plain sight. People were already using the Notes app, voice notes and group chats to process what they were feeling, navigating and outgrowing, but there was no beautiful, intelligent product built for that everyday need: trying to understand yourself in real time.",
+      "So I built one. Today, Storia has helped more than 45,000 people, with over 40 million words journaled, and has become one of Apple’s most featured self-reflection apps.",
+    ],
   },
   {
     src: storyImg8,
     alt: "Elizabeth Uviebinené — Today",
     title: "Today",
-    content: `From books to brands to building products people love, I’m interested in one thing: helping people better understand who they are and who they’re becoming.\n\nMy work is about giving people language for the lives they’re living and tools for the futures they’re trying to build.`,
+    content: [
+      "From books to brands to building products people love, I’m interested in one thing: helping people better understand who they are and who they’re becoming.",
+      "My work is about giving people language for the lives they’re living and tools for the futures they’re trying to build.",
+    ],
   },
 ];
 
@@ -102,12 +131,17 @@ function HeroSlideCopy({ slide }: { slide: HeroSlide }) {
 
       <div className="mt-6 h-[2px] w-14 rounded-full bg-[var(--storia-orange50)]" />
 
-      <Text
-        size="large"
-        className="mt-8 max-w-[42rem] whitespace-pre-line text-[1.0rem] leading-[1.9] text-[var(--storia-blackLight)] sm:text-[1.06rem]"
-      >
-        {slide.content}
-      </Text>
+      <div className="mt-8 flex max-w-[42rem] flex-col gap-[1em]">
+        {slide.content.map((paragraph, index) => (
+          <Text
+            key={index}
+            size="large"
+            className="text-[1.0rem] leading-[1.9] text-[var(--storia-blackLight)] sm:text-[1.06rem]"
+          >
+            {paragraph}
+          </Text>
+        ))}
+      </div>
     </>
   );
 }
@@ -176,6 +210,12 @@ function HeroCarousel({
           sizes="(max-width: 768px) 82vw, 430px"
           priority
         />
+
+        <div className="pointer-events-none absolute bottom-[10%] left-1/2 z-20 -translate-x-1/2 translate-y-1/2 rounded-full bg-[var(--storia-white75)] px-3 py-1.5 text-[0.82rem] font-medium text-[var(--storia-blackLight)] shadow-[0_8px_18px_rgba(33,37,41,0.08)] backdrop-blur-sm">
+          <span className="text-[var(--storia-blackLight)]">{currentStep}</span>
+          <span className="px-1 text-[var(--storia-blackLight)]">/</span>
+          <span className="text-[var(--storia-blackLight)]">{totalSteps}</span>
+        </div>
       </div>
 
       {showControls && (
@@ -198,12 +238,6 @@ function HeroCarousel({
           </button>
         </>
       )}
-
-      <div className="pointer-events-none absolute bottom-10 left-1/2 z-10 -translate-x-1/2 rounded-full bg-[var(--storia-white75)] px-3 py-1.5 text-[0.82rem] font-medium text-[var(--storia-blackLight)] shadow-[0_8px_18px_rgba(33,37,41,0.08)] backdrop-blur-sm">
-        <span className="text-[var(--storia-blackLight)]">{currentStep}</span>
-        <span className="px-1 text-[var(--storia-blackLight)]">/</span>
-        <span className="text-[var(--storia-blackLight)]">{totalSteps}</span>
-      </div>
     </div>
   );
 }
