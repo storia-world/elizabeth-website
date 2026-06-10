@@ -62,8 +62,17 @@ const HERO_SLIDES: HeroSlide[] = [
     title: "Early Years",
     content: [
       "I always joke that I was born in Lagos, Nigeria, then moved to mini Lagos: Peckham.",
-      "Being Nigerian gave me a deep-rooted belief in possibility. Ambition was expected; it was never a question of if, but how far you would go. From early on, I understood that you come from something: your name carries stories, expectations and history.",
-      "Peckham added another layer. Vibrant, creative and chaotic, it taught me resilience and resourcefulness. Growing up between cultures, codes and expectations showed me that people are rarely one thing. Noise and tenderness, pressure and creativity, all sat side by side.",
+      "Being Nigerian gave me a deep-rooted belief in possibility. Ambition was expected; it was never a question of if, but how far you would go.",
+      <>
+        Peckham added another layer.{" "}
+        <span className="font-semibold text-[var(--storia-blackLight)]">
+          Vibrant, creative and chaotic
+        </span>
+        , it taught me resilience and resourcefulness. Growing up between
+        cultures, codes and expectations showed me that people are rarely one
+        thing. Noise and tenderness, pressure and creativity, all sat side by
+        side.
+      </>,
     ],
   },
   {
@@ -71,15 +80,15 @@ const HERO_SLIDES: HeroSlide[] = [
     alt: "Elizabeth Uviebinené — The World Got Bigger",
     title: "The World Got Bigger",
     content: [
+      "Getting into the University of Warwick cracked my world open. I studied Politics and International Relations, a subject that gave language to something I had always been curious about: power.",
       <>
-        Getting into the University of Warwick cracked my world open. I studied
-        Politics and International Relations, a subject that gave language to
-        something{" "}
         <span className="font-semibold text-[var(--storia-blackLight)]">
-          I had always been curious about: power.
+          Warwick gave me friendships that would go on to change my life
         </span>
+        : sisterhood, late-night conversations, kitchen-table debates,
+        questionable student nights out, and people who made it feel like a home
+        from home!
       </>,
-      "Warwick gave me friendships that would go on to change my life: sisterhood, late-night conversations, kitchen-table debates, questionable student nights out, and people who made it feel like a home from home!",
     ],
   },
   {
@@ -93,7 +102,16 @@ const HERO_SLIDES: HeroSlide[] = [
       </>
     ),
     content: [
-      "I began my career in the corporate world, where I learned very quickly that work is never just work. It is ambition, performance, confidence, identity and the hidden curriculum no one hands you, but everyone expects you to understand. Those early years taught me that careers are not only built through talent, but through navigation: learning how rooms work, how power moves, how influence is built, and what it takes to build a career without losing yourself.",
+      <>
+        I began my career in the corporate world, where I learned very quickly
+        that{" "}
+        <span className="font-semibold text-[var(--storia-blackLight)]">
+          work is never just work
+        </span>
+        . It is ambition, performance, confidence and the hidden curriculum no
+        one hands you, but everyone expects you to understand.
+      </>,
+      "Those years in banking taught me that careers are not only built through talent, but through navigation: learning how rooms work, how power moves, how influence is built, and what it takes to build a career without losing yourself.",
     ],
   },
   {
@@ -101,7 +119,15 @@ const HERO_SLIDES: HeroSlide[] = [
     alt: "Elizabeth Uviebinené — The Book That Changed Everything",
     title: "The Book That Changed Everything",
     content: [
-      "I co-authored the bestselling book Slay In Your Lane with my best friend, Yomi Adegoke, and watched it grow far beyond anything either of us imagined. What started as a conversation between us became a cultural landmark about identity and belonging.",
+      <>
+        I co-authored the{" "}
+        <span className="font-semibold text-[var(--storia-blackLight)]">
+          bestselling book Slay In Your Lane
+        </span>{" "}
+        with my best friend, Yomi Adegoke, and watched it grow far beyond
+        anything either of us imagined. What started as a conversation between
+        us became a cultural landmark about identity and belonging.
+      </>,
       "The book was shortlisted for both the British Book Awards and the National Book Awards, and helped establish me as one of the leading voices on Black British womanhood. Its influence grew into a companion journal, the Loud Black Girls anthology, and the children’s book The Offline Diaries. I was also named one of the most influential people in London by the Evening Standard.",
     ],
   },
@@ -110,19 +136,53 @@ const HERO_SLIDES: HeroSlide[] = [
     alt: "Elizabeth Uviebinené — A Wider Lens",
     title: "A Wider Lens",
     content: [
-      "Writing a column for the Financial Times gave me a rare kind of space: a place to think publicly, consistently and at scale.",
-      "For four years, I wrote about the people changing how we work, live and build — from founders and creatives to cultural thinkers and new forms of leadership. It sharpened my ability to spot patterns early, take what was happening in everyday life and connect it to bigger shifts in business, culture and society.",
+      <>
+        Writing a column for the Financial Times gave me a rare kind of space: a
+        place to{" "}
+        <span className="font-semibold text-[var(--storia-blackLight)]">
+          think publicly, consistently and at scale.
+        </span>
+      </>,
+      <>
+        For four years, I wrote about the people changing how we work, live and
+        build — from founders and creatives to cultural thinkers and new forms
+        of leadership. It sharpened my ability to spot patterns early, take what
+        was happening in everyday life and{" "}
+        <span className="font-semibold text-[var(--storia-blackLight)]">
+          connect it to bigger shifts in business, culture and society.
+        </span>
+      </>,
       "As one of the few Black women with that kind of platform, I understood the responsibility and power of bringing a perspective, curiosity and cultural fluency that was still too rare in those pages.",
     ],
   },
   {
     src: storyImg6,
     alt: "Elizabeth Uviebinené — When the Script Stopped Working",
-    title: "When the Script Stopped Working",
+    title: (
+      <>
+        When the script
+        <br />
+        Stopped working
+      </>
+    ),
     content: [
       "I had the idea for The Reset before Covid, after noticing how many people were starting to question the lives they had worked so hard to build.",
-      "They had followed the path, built a career, ticked the boxes and still felt a quiet disconnect between the life that looked good on paper and the one they actually wanted to live. Then the pandemic arrived, and that private reckoning became collective.",
-      "The book opened up a broader conversation with organisations about the future of work, and what top talent needs from the places where they give their time, energy and ideas.",
+      <>
+        They had followed the path, built a career, ticked the boxes and still
+        felt a quiet disconnect between the life that looked good on paper and
+        the one they actually wanted to live. Then the pandemic arrived, and
+        that{" "}
+        <span className="font-semibold text-[var(--storia-blackLight)]">
+          private reckoning became collective.
+        </span>
+      </>,
+      <>
+        <span className="font-semibold text-[var(--storia-blackLight)]">
+          The book opened up a broader conversation
+        </span>{" "}
+        with organisations about the future of work, and what top talent needs
+        from the places where they give their time, energy and ideas.
+      </>,
     ],
   },
   {
@@ -130,8 +190,26 @@ const HERO_SLIDES: HeroSlide[] = [
     alt: "Elizabeth Uviebinené — The Product I Wish Existed",
     title: "The Product I Wish Existed",
     content: [
-      "Storia came from noticing a behaviour and problem hiding in plain sight. People were already using the Notes app, voice notes and group chats to process what they were feeling, navigating and outgrowing, but there was no beautiful, intelligent product built for that everyday need: trying to understand yourself in real time.",
-      "So I built one. Today, Storia has helped more than 45,000 people, with over 40 million words journaled, and has become one of Apple’s most featured self-reflection apps.",
+      <>
+        Storia came from noticing a behaviour and{" "}
+        <span className="font-semibold text-[var(--storia-blackLight)]">
+          problem hiding in plain sight
+        </span>
+        . People were already using the Notes app, voice notes and group chats
+        to process what they were feeling, navigating and outgrowing, but there
+        was no{" "}
+        <span className="font-semibold text-[var(--storia-blackLight)]">
+          beautiful, intelligent product
+        </span>{" "}
+        built for that everyday need: trying to understand yourself in real time.
+      </>,
+      <>
+        So I built one. Today, Storia has helped more than{" "}
+        <span className="font-semibold text-[var(--storia-blackLight)]">
+          45,000 people, with over 40 million words journaled
+        </span>
+        , and has become one of Apple’s most featured self-reflection apps.
+      </>,
     ],
   },
   {
