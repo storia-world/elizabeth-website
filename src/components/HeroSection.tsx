@@ -21,7 +21,7 @@ import storyImg4 from "@/assets/images/storyImg4.png";
 import storyImg5 from "@/assets/images/storyImg5.jpg";
 import storyImg6 from "@/assets/images/storyImg6.jpg";
 import storyImg7 from "@/assets/images/storyImg7.jpg";
-import storyImg8 from "@/assets/images/storyImg8.png";
+// import storyImg8 from "@/assets/images/storyImg8.png";
 
 type HeroSlide = {
   src: StaticImageData;
